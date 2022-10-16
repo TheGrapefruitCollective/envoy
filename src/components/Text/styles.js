@@ -25,6 +25,13 @@ const styles = StyleSheet.create({
 		marginLeft: 34,
 		marginRight: 34,
 		fontSize: 16,
+	},
+
+	link: {
+		textAlign: 'center',
+		color: '#CC4D46',
+		justifyContent: 'space-around',
+		margin: 12,
 	}
 })
 
