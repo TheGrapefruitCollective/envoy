@@ -44,7 +44,7 @@ export const CreateAccountStepOne = (props) => {
 									onChangeText = {
 										(college) => {
 											setCollege(college)
-											validateCollege(college)
+											//validateCollege(college)
 										}
 									}
 									result={validateCollege(college) === true ? null : 'Invalid college department.'}
@@ -59,7 +59,9 @@ export const CreateAccountStepOne = (props) => {
 					<ButtonColoured
 						title='Continue'
 						disabled={
-							((fullName && college) !== '') ? false : true
+							//((fullName && college) !== '') ? false : true
+							//(fullName !== '' && validateCollege(college) === true) ? false : true
+							((fullName !== '' && college !== '') && (validateCollege(college) === true)) ? false : true
 						}
 						onPress={
 							() => props.navigation.navigate('CreateAccountStepTwo')
@@ -101,7 +103,7 @@ export const CreateAccountStepTwo = (props) => {
 									onChangeText={
 										(email) => {
 											setEmail(email)
-											validateEmail(email)
+											//validateEmail(email)
 										}
 									}
 								result={validateEmail(email) === true ? null : 'Invalid email address.'}
@@ -140,7 +142,7 @@ export const CreateAccountStepTwo = (props) => {
 					<ButtonColoured
 						title='Continue'
 						disabled={
-							(validateConfirmPassword(password, confirmPassword) === true) ? false : true
+							((email !== '' && password !== '' && confirmPassword !== '') && (validatePassword(password) === true) && (validateConfirmPassword(password, confirmPassword) === true)) ? false : true
 						}
 						onPress={
 							() => props.navigation.navigate('DataPrivacy')
