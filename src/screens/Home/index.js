@@ -4,11 +4,14 @@ import { ButtonColoured, ButtonMono } from '../../components/Button';
 import Logo from '../../components/Logo';
 
 
-const Home = () => {
+const Home = (props) => {
 	return(
 		<View style={styles.container}>
 			<Logo/>
-			<ButtonColoured title='Create an account'/>
+			<ButtonColoured
+				title='Create Account'
+				onPress={ () => {props.navigation.navigate('CreateAccountStepOne')} }
+			/>
 			<ButtonMono title='Login'/>
 		</View>
 	);
