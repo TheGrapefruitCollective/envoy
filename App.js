@@ -4,8 +4,7 @@ import { useFonts } from 'expo-font';
 import Home from './src/screens/Home';
 import { CreateAccountStepOne, CreateAccountStepTwo } from './src/screens/Auth/CreateAccount';
 import DataPrivacy from './src/screens/Auth/DataPrivacy';
-
-
+import LogIn from './src/screens/Auth/LogIn';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -56,6 +55,15 @@ export default function App() {
 						headerShadowVisible: false,
 					}}
 					component={DataPrivacy}
+				/>
+
+				<Stack.Screen
+					name='LogIn'
+					options={{
+						title: null,
+						headerShadowVisible: false,
+					}}
+					component={LogIn}
 				/>
 			</Stack.Navigator>
 		</NavigationContainer>

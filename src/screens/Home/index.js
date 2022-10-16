@@ -12,7 +12,9 @@ const Home = (props) => {
 				title='Create Account'
 				onPress={ () => {props.navigation.navigate('CreateAccountStepOne')} }
 			/>
-			<ButtonMono title='Login'/>
+			<ButtonMono title='Login'
+				onPress={ () => {props.navigation.navigate('LogIn')} }
+			/>
 		</View>
 	);
 }
