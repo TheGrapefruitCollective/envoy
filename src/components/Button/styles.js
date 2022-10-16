@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
 		borderRadius: 12,
 		width: 320,
 		height: 64,
-		margin: 12,
+		margin: 12 / 2,
 	},
 
 	buttonMono: {
@@ -21,17 +21,17 @@ const styles = StyleSheet.create({
 		borderRadius: 12,
 		width: 320,
 		height: 64,
-		margin: 12,
+		margin: 12 / 2,
 	},
 
 	textLight: {
 		color: '#FFFFFF',
-		fontFamily: 'Ubuntu-Regular',
+		fontFamily: 'Ubuntu-Bold',
 	},
 
 	textDark: {
 		color: '#1E1E1E',
-		fontFamily: 'Ubuntu-Regular',
+		fontFamily: 'Ubuntu-Bold',
 	}
 });
 
