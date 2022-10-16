@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native';
+import { View, Text, Linking } from 'react-native';
 import styles from './styles';
 
 
@@ -36,6 +36,20 @@ export const ParagraphText = (props) => {
 				]}
 			>
 				{props.text}
+			</Text>
+		</View>
+	);
+}
+
+
+export const LinkText = (props) => {
+	return(
+		<View style={styles.container}>
+			<Text
+				style={styles.link}
+				onPress={ () => Linking.openURL(props.url) }
+			>
+				{props.title}
 			</Text>
 		</View>
 	);
