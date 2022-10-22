@@ -11,20 +11,20 @@ const styles = StyleSheet.create({
 		textAlign: 'left',
 		fontSize: 12,
 		width: 320,
-		height: 64,
+		height: 48,
 		paddingLeft: 12,
 		borderWidth: 1,
-		borderRadius: 12,
+		borderRadius: 12 / 6,
 		fontFamily: 'Ubuntu-Regular',
 		fontSize: 16,
 	},
 
-	inputLabel: {
-		color: '#CC4D46',
-		top: 24,
-		left: 12,
-		fontFamily: 'Ubuntu-Bold',
-	},
+	// inputLabel: {
+	// 	color: '#CC4D46',
+	// 	top: 24,
+	// 	left: 12,
+	// 	fontFamily: 'Ubuntu-Bold',
+	// },
 
 	result: {
 		width: 288,

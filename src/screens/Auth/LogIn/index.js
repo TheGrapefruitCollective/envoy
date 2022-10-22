@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, View, ScrollView, Platform, Text } from 'react-native';
+import { Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, View, ScrollView, Platform } from 'react-native';
 import Logo from '../../../components/Logo';
 import InputField from '../../../components/InputField';
 import { LinkText } from '../../../components/Text';

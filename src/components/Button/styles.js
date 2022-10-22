@@ -7,9 +7,9 @@ const styles = StyleSheet.create({
 		textAlign: 'center',
 		alignItems: 'center',
 		justifyContent: 'center',
-		borderRadius: 12,
+		borderRadius: 12 / 6,
 		width: 320,
-		height: 64,
+		height: 48,
 		margin: 12 / 2,
 	},
 
@@ -18,9 +18,9 @@ const styles = StyleSheet.create({
 		textAlign: 'center',
 		alignItems: 'center',
 		justifyContent: 'center',
-		borderRadius: 12,
+		borderRadius: 12 / 6,
 		width: 320,
-		height: 64,
+		height: 48,
 		margin: 12 / 2,
 	},
 
