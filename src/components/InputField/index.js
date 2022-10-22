@@ -5,7 +5,6 @@ import styles from './styles';
 const InputField = (props) => {
 	return(
 		<View style={styles.container}>
-			<Text style={styles.inputLabel}>{props.label}</Text>
 			<TextInput
 				style={styles.inputField}
 				placeholder={props.placeholder}
