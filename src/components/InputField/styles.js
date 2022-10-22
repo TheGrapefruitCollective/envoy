@@ -19,12 +19,12 @@ const styles = StyleSheet.create({
 		fontSize: 16,
 	},
 
-	inputLabel: {
-		color: '#CC4D46',
-		top: 24,
-		left: 12,
-		fontFamily: 'Ubuntu-Bold',
-	},
+	// inputLabel: {
+	// 	color: '#CC4D46',
+	// 	top: 24,
+	// 	left: 12,
+	// 	fontFamily: 'Ubuntu-Bold',
+	// },
 
 	result: {
 		width: 288,
