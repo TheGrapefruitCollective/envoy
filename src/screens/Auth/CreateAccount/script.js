@@ -50,7 +50,6 @@ export const validatePassword = (password) => {
 }
 
 
-
 export const validateConfirmPassword = (password, confirmPassword) => {
 	if(confirmPassword === '') {
 		return true;
