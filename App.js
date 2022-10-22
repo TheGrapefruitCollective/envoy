@@ -5,6 +5,8 @@ import Home from './src/screens/Home';
 import { CreateAccountStepOne, CreateAccountStepTwo } from './src/screens/Auth/CreateAccount';
 import DataPrivacy from './src/screens/Auth/DataPrivacy';
 import LogIn from './src/screens/Auth/LogIn';
+
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
