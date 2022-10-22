@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
 		height: 48,
 		paddingLeft: 12,
 		borderWidth: 1,
-		borderRadius: 12,
+		borderRadius: 12 / 6,
 		fontFamily: 'Ubuntu-Regular',
 		fontSize: 16,
 	},
