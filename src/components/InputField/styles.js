@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
 		textAlign: 'left',
 		fontSize: 12,
 		width: 320,
-		height: 64,
+		height: 48,
 		paddingLeft: 12,
 		borderWidth: 1,
 		borderRadius: 12,
