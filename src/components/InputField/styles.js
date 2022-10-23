@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import Colours from '../Colours';
 
 
 const styles = StyleSheet.create({
@@ -7,16 +8,16 @@ const styles = StyleSheet.create({
 	},
 
 	inputField: {
-		color: '#959595',
+		color: Colours.colour5,
+		backgroundColor: Colours.colour3,
 		textAlign: 'left',
 		fontSize: 12,
 		width: 320,
 		height: 48,
 		paddingLeft: 12,
-		borderWidth: 1,
 		borderRadius: 12 / 6,
 		fontFamily: 'Ubuntu-Regular',
-		fontSize: 16,
+		fontSize: 12,
 	},
 
 	// inputLabel: {
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		flexWrap: 'wrap',
 		alignItems: 'flex-start',
-		color: '#CC4D46',
+		color: Colours.colour1,
 		fontSize: 12,
 		paddingLeft: 12,
 		justifyContent: 'center',

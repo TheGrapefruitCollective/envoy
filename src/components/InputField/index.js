@@ -1,4 +1,5 @@
 import { Text, TextInput, View } from 'react-native';
+import Colours from '../Colours';
 import styles from './styles';
 
 
@@ -8,6 +9,7 @@ const InputField = (props) => {
 			<TextInput
 				style={styles.inputField}
 				placeholder={props.placeholder}
+				placeholderTextColor={Colours.grey3}
 				secureTextEntry={props.secureTextEntry}
 				onChangeText={props.onChangeText}
 			/>

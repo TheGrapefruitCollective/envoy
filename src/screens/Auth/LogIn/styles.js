@@ -1,11 +1,12 @@
 import { StyleSheet } from 'react-native';
+import Colours from '../../../components/Colours';
 
 
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		justifyContent: 'center',
-		backgroundColor: '#FFFFFF',
+		backgroundColor: Colours.colour0,
 	},
 
 	inputFieldContainer: {
@@ -17,7 +18,7 @@ const styles = StyleSheet.create({
 	},
 
 	buttonContainer: {
-		backgroundColor: '#FFFFFF',
+		backgroundColor: Colours.colour0,
 		textAlign: 'center',
 		alignItems: 'center',
 		justifyContent: 'flex-end',
