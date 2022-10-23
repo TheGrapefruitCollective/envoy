@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, View, ScrollView, Platform } from 'react-native';
 import InputField from '../../../components/InputField';
 import { ButtonColoured } from '../../../components/Button';
-import { TitleText } from '../../../components/Text';
 import styles from './styles';
 import { validateEmail, validatePassword, validateCollege, validateConfirmPassword } from './script';
 
@@ -20,9 +19,6 @@ export const CreateAccountStepOne = (props) => {
 			>
 				<TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 					<>
-						<TitleText text='Create an'/>
-						<TitleText text='account' style='red'/>
-
 						<View style={styles.inputFieldContainer}>
 							<ScrollView
 								showsVerticalScrollIndicator={false}
@@ -88,9 +84,6 @@ export const CreateAccountStepTwo = (props) => {
 			>
 				<TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 					<>
-						<TitleText text='Create an'/>
-						<TitleText text='account' style='red'/>
-
 						<View style={styles.inputFieldContainer}>
 							<ScrollView
 								showsVerticalScrollIndicator={false}
