@@ -5,6 +5,7 @@ import Home from './src/screens/Home';
 import { CreateAccountStepOne, CreateAccountStepTwo } from './src/screens/Auth/CreateAccount';
 import DataPrivacy from './src/screens/Auth/DataPrivacy';
 import LogIn from './src/screens/Auth/LogIn';
+import Colours from './src/components/Colours';
 
 
 const Stack = createNativeStackNavigator();
@@ -32,8 +33,12 @@ export default function App() {
 					name='CreateAccountStepOne'
 					options={
 						{
-							title: null,
-							headerShadowVisible: false
+							title: 'Create account',
+							headerShadowVisible: false,
+							headerTintColor: Colours.colour5,
+							headerStyle: {
+								backgroundColor: Colours.colour0,
+							}
 						}
 					}
 					component={CreateAccountStepOne}
@@ -43,8 +48,12 @@ export default function App() {
 					name='CreateAccountStepTwo'
 					options={
 						{
-							title: null,
-							headerShadowVisible: false
+							title: 'Create account',
+							headerShadowVisible: false,
+							headerTintColor: Colours.colour5,
+							headerStyle: {
+								backgroundColor: Colours.colour0,
+							}
 						}
 					}
 					component={CreateAccountStepTwo}
@@ -52,19 +61,31 @@ export default function App() {
 
 				<Stack.Screen
 					name='DataPrivacy'
-					options={{
-						title: null,
-						headerShadowVisible: false,
-					}}
+					options={
+						{
+							title: 'Data privacy',
+							headerShadowVisible: false,
+							headerTintColor: Colours.colour5,
+							headerStyle: {
+								backgroundColor: Colours.colour0,
+							}
+						}
+					}
 					component={DataPrivacy}
 				/>
 
 				<Stack.Screen
 					name='LogIn'
-					options={{
-						title: null,
-						headerShadowVisible: false,
-					}}
+					options={
+						{
+							title: 'Login account',
+							headerShadowVisible: false,
+							headerTintColor: Colours.colour5,
+								headerStyle: {
+									backgroundColor: Colours.colour0,
+								}
+						}
+					}
 					component={LogIn}
 				/>
 			</Stack.Navigator>
