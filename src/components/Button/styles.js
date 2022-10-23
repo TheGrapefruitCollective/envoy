@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
+import Colours from '../Colours';
 
 
 const styles = StyleSheet.create({
 	buttonColoured: {
-		backgroundColor: "#CC4D46",
+		backgroundColor: Colours.colour1,
 		textAlign: 'center',
 		alignItems: 'center',
 		justifyContent: 'center',
@@ -14,7 +15,9 @@ const styles = StyleSheet.create({
 	},
 
 	buttonMono: {
-		backgroundColor: '#EBECEF',
+		backgroundColor: Colours.grey0,
+		borderColor: Colours.colour1,
+		borderWidth: 1,
 		textAlign: 'center',
 		alignItems: 'center',
 		justifyContent: 'center',
@@ -25,12 +28,12 @@ const styles = StyleSheet.create({
 	},
 
 	textLight: {
-		color: '#FFFFFF',
+		color: Colours.colour5,
 		fontFamily: 'Ubuntu-Bold',
 	},
 
 	textDark: {
-		color: '#1E1E1E',
+		color: Colours.colour5,
 		fontFamily: 'Ubuntu-Bold',
 	}
 });
