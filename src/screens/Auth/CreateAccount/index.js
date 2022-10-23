@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, View, ScrollView, Platform, Text } from 'react-native';
+import { Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, View, ScrollView, Platform } from 'react-native';
 import InputField from '../../../components/InputField';
 import { ButtonColoured } from '../../../components/Button';
-import styles from './styles';
 import { validateEmail, validatePassword, validateCollege, validateConfirmPassword } from './script';
+import styles from './styles';
 
 
 export const CreateAccountStepOne = (props) => {

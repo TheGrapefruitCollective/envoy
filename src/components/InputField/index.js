@@ -1,14 +1,15 @@
 import { Text, TextInput, View } from 'react-native';
+import Colours from '../Colours';
 import styles from './styles';
 
 
 const InputField = (props) => {
 	return(
 		<View style={styles.container}>
-			<Text style={styles.inputLabel}>{props.label}</Text>
 			<TextInput
 				style={styles.inputField}
 				placeholder={props.placeholder}
+				placeholderTextColor={Colours.grey3}
 				secureTextEntry={props.secureTextEntry}
 				onChangeText={props.onChangeText}
 			/>

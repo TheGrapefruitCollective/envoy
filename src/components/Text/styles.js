@@ -1,11 +1,12 @@
 import { StyleSheet } from 'react-native';
+import Colours from '../Colours';
 
 
 const styles = StyleSheet.create({
 	marginLeft: 32,
 
 	container: {
-		backgroundColor: '#FFFFFF',
+		backgroundColor: Colours.grey0,
 	},
 
 	title: {
@@ -18,13 +19,20 @@ const styles = StyleSheet.create({
 	},
 
 	red: {
-		color: '#CC4D46',
+		color: Colours.colour1,
 	},
 
 	paragraph: {
 		marginLeft: 34,
 		marginRight: 34,
 		fontSize: 16,
+	},
+
+	link: {
+		textAlign: 'center',
+		color: Colours.colour1,
+		justifyContent: 'space-around',
+		margin: 12,
 	}
 })
 
