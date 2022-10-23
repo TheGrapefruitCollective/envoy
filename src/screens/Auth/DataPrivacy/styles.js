@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import Colours from '../../../components/Colours';
 
 
 const styles = StyleSheet.create({
@@ -8,14 +9,14 @@ const styles = StyleSheet.create({
 
 	contents: {
 		flex: 1,
-		backgroundColor: '#FFFFFF',
+		backgroundColor: Colours.colour0,
 		textAlign: 'left',
 		alignItems: 'center',
 		justifyContent: 'center',
 	},
 
 	buttonContainer: {
-		backgroundColor: '#FFFFFF',
+		backgroundColor: Colours.colour0,
 		textAlign: 'center',
 		alignItems: 'center',
 		justifyContent: 'flex-end',
