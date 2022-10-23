@@ -1,20 +1,94 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useFonts } from 'expo-font';
+import Home from './src/screens/Home';
+import { CreateAccountStepOne, CreateAccountStepTwo } from './src/screens/Auth/CreateAccount';
+import DataPrivacy from './src/screens/Auth/DataPrivacy';
+import LogIn from './src/screens/Auth/LogIn';
+import Colours from './src/components/Colours';
+
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
+	const [fonts] = useFonts({
+		'Ubuntu-Regular': require('./assets/fonts/Ubuntu-Regular.ttf'),
+		'Ubuntu-Bold': require('./assets/fonts/Ubuntu-Bold.ttf'),
+	});
+
+	if(!(fonts)) {
+		return null;
+	}
+
 	return (
-		<View style={styles.container}>
-			<Text>Open up App.js to start working on your app!</Text>
-			<StatusBar style="auto" />
-		</View>
+		<NavigationContainer>
+			<Stack.Navigator>
+				<Stack.Screen
+					options={{ headerShown: false }}
+					name='Home'
+					component={Home}
+				/>
+
+				<Stack.Screen
+					name='CreateAccountStepOne'
+					options={
+						{
+							title: 'Create account',
+							headerShadowVisible: false,
+							headerTintColor: Colours.colour5,
+							headerStyle: {
+								backgroundColor: Colours.colour0,
+							}
+						}
+					}
+					component={CreateAccountStepOne}
+				/>
+
+				<Stack.Screen
+					name='CreateAccountStepTwo'
+					options={
+						{
+							title: 'Create account',
+							headerShadowVisible: false,
+							headerTintColor: Colours.colour5,
+							headerStyle: {
+								backgroundColor: Colours.colour0,
+							}
+						}
+					}
+					component={CreateAccountStepTwo}
+				/>
+
+				<Stack.Screen
+					name='DataPrivacy'
+					options={
+						{
+							title: 'Data privacy',
+							headerShadowVisible: false,
+							headerTintColor: Colours.colour5,
+							headerStyle: {
+								backgroundColor: Colours.colour0,
+							}
+						}
+					}
+					component={DataPrivacy}
+				/>
+
+				<Stack.Screen
+					name='LogIn'
+					options={
+						{
+							title: 'Login account',
+							headerShadowVisible: false,
+							headerTintColor: Colours.colour5,
+								headerStyle: {
+									backgroundColor: Colours.colour0,
+								}
+						}
+					}
+					component={LogIn}
+				/>
+			</Stack.Navigator>
+		</NavigationContainer>
 	);
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: '#fff',
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-});
