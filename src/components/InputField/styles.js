@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
 		alignItems: 'flex-start',
 		color: Colours.colour1,
 		fontSize: 12,
-		paddingLeft: 12,
 		justifyContent: 'center',
 		fontFamily: 'Ubuntu-Regular',
 	}

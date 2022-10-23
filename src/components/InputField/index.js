@@ -9,7 +9,7 @@ const InputField = (props) => {
 			<TextInput
 				style={styles.inputField}
 				placeholder={props.placeholder}
-				placeholderTextColor={Colours.grey3}
+				placeholderTextColor={Colours.colour4}
 				secureTextEntry={props.secureTextEntry}
 				onChangeText={props.onChangeText}
 			/>
