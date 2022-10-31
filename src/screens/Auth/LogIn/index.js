@@ -1,12 +1,11 @@
 import { Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, View, ScrollView, Platform } from 'react-native';
 import Logo from '../../../components/Logo';
 import InputField from '../../../components/InputField';
-import { LinkText } from '../../../components/Text';
 import { ButtonColoured } from '../../../components/Button';
 import styles from './styles';
 
 
-const LogIn = () => {
+const LogIn = (props) => {
 	return(
 		<>
 			<KeyboardAvoidingView
@@ -36,11 +35,6 @@ const LogIn = () => {
 								placeholder='Enter your password'
 								secureTextEntry={true}
 							/>
-
-							<LinkText
-								title='Forgot password?'
-							/>
-
 						</ScrollView>
 					</View>
 					</>
@@ -51,6 +45,9 @@ const LogIn = () => {
 				<View style={styles.buttonContainer}>
 					<ButtonColoured
 						title='Log in'
+						onPress={
+							() => props.navigation.navigate('AnnouncementUniversity')
+						}
 					/>
 				</View>
 			</View>
