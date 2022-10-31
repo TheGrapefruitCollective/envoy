@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useFonts } from 'expo-font';
 import Home from './src/screens/Home';
 import { CreateAccountStepOne, CreateAccountStepTwo } from './src/screens/Auth/CreateAccount';
+import { TermsOfService, PrivacyPolicy } from './src/screens/Auth/DataPrivacy';
 import LogIn from './src/screens/Auth/LogIn';
 import Colours from './src/components/Colours';
 
@@ -34,7 +35,7 @@ export default function App() {
 						{
 							title: 'Create account',
 							headerShadowVisible: false,
-							headerTintColor: Colours.colour5,
+							headerTintColor: Colours.colour6,
 							headerStyle: {
 								backgroundColor: Colours.colour0,
 							}
@@ -49,7 +50,7 @@ export default function App() {
 						{
 							title: 'Create account',
 							headerShadowVisible: false,
-							headerTintColor: Colours.colour5,
+							headerTintColor: Colours.colour6,
 							headerStyle: {
 								backgroundColor: Colours.colour0,
 							}
@@ -59,12 +60,42 @@ export default function App() {
 				/>
 
 				<Stack.Screen
+					name='TermsOfService'
+					options={
+						{
+							title: 'Terms of service',
+							headerShadowVisible: false,
+							headerTintColor: Colours.colour6,
+							headerStyle: {
+								backgroundColor: Colours.colour0,
+							}
+						}
+					}
+					component={TermsOfService}
+				/>
+
+				<Stack.Screen
+					name='PrivacyPolicy'
+					options={
+						{
+							title: 'Privacy policy',
+							headerShadowVisible: false,
+							headerTintColor: Colours.colour6,
+							headerStyle: {
+								backgroundColor: Colours.colour0,
+							}
+						}
+					}
+					component={PrivacyPolicy}
+				/>
+
+				<Stack.Screen
 					name='LogIn'
 					options={
 						{
 							title: 'Login account',
 							headerShadowVisible: false,
-							headerTintColor: Colours.colour5,
+							headerTintColor: Colours.colour6,
 								headerStyle: {
 									backgroundColor: Colours.colour0,
 								}
