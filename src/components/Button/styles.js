@@ -4,36 +4,34 @@ import Colours from '../Colours';
 
 const styles = StyleSheet.create({
 	buttonColoured: {
-		backgroundColor: Colours.colour1,
+		backgroundColor: Colours.colour2,
 		textAlign: 'center',
 		alignItems: 'center',
 		justifyContent: 'center',
-		borderRadius: 12 / 6,
+		borderRadius: 12,
 		width: 320,
 		height: 48,
 		margin: 12 / 2,
 	},
 
 	buttonMono: {
-		backgroundColor: Colours.grey0,
-		borderColor: Colours.colour1,
-		borderWidth: 1,
+		backgroundColor: Colours.colour6,
 		textAlign: 'center',
 		alignItems: 'center',
 		justifyContent: 'center',
-		borderRadius: 12 / 6,
+		borderRadius: 12,
 		width: 320,
 		height: 48,
 		margin: 12 / 2,
 	},
 
 	textLight: {
-		color: Colours.colour5,
+		color: Colours.colour6,
 		fontFamily: 'Ubuntu-Bold',
 	},
 
 	textDark: {
-		color: Colours.colour5,
+		color: Colours.colour0,
 		fontFamily: 'Ubuntu-Bold',
 	}
 });
