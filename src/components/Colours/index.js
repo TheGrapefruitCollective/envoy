@@ -9,7 +9,8 @@ const Colours = StyleSheet.create({
 	colour4: '#7F7F7F',
 	colour5: '#999999',
 	colour6: '#FFFFFF',
-	colour7: '#F64F64'
+	colour7: '#F64F64',
+	colour8: '#272727',
 });
 
 
