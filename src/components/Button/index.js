@@ -26,3 +26,15 @@ export const ButtonMono = (props) => {
 		</TouchableOpacity>
 	);
 }
+
+
+export const ButtonSmall = (props) => {
+	return(
+		<TouchableOpacity
+			style={styles.buttonSmall}
+			onPress={props.onPress}
+		>
+			<Text style={styles.textDark}>{props.title}</Text>
+		</TouchableOpacity>
+	);
+}
