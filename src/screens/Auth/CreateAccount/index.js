@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, View, ScrollView, Platform } from 'react-native';
 import InputField from '../../../components/InputField';
 import { ButtonColoured } from '../../../components/Button';
-import { TitleText } from '../../../components/Text';
 import { validateEmail, validatePassword, validateCollege, validateConfirmPassword } from './script';
 import styles from './styles';
 
@@ -10,6 +9,7 @@ import styles from './styles';
 export const CreateAccountStepOne = (props) => {
 	const [fullName, setFullName] = useState('');
 	const [college, setCollege] = useState('');
+	const [email, setEmail] = useState('');
 
 	return(
 		<>
@@ -20,9 +20,6 @@ export const CreateAccountStepOne = (props) => {
 			>
 				<TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 					<>
-						<TitleText text='Create an'/>
-						<TitleText text='account' style='red'/>
-
 						<View style={styles.inputFieldContainer}>
 							<ScrollView
 								showsVerticalScrollIndicator={false}
@@ -30,7 +27,6 @@ export const CreateAccountStepOne = (props) => {
 								keyboardShouldPersistTaps='always'
 							>
 								<InputField
-									label='Full Name'
 									placeholder='Enter your first name'
 									onChangeText={
 										(fullName) => {
@@ -39,7 +35,6 @@ export const CreateAccountStepOne = (props) => {
 									}
 								/>
 								<InputField
-									label='College Department'
 									placeholder='Enter your college department'
 									onChangeText = {
 										(college) => {
@@ -48,6 +43,16 @@ export const CreateAccountStepOne = (props) => {
 										}
 									}
 									result={validateCollege(college) === true ? null : 'Invalid college department.'}
+								/>
+								<InputField
+									placeholder='Enter your email address'
+									onChangeText={
+										(email) => {
+											setEmail(email)
+										}
+									}
+										result={validateEmail(email) === true ? null : 'Invalid email address.'
+									}
 								/>
 							</ScrollView>
 						</View>
@@ -61,7 +66,7 @@ export const CreateAccountStepOne = (props) => {
 						disabled={
 							//((fullName && college) !== '') ? false : true
 							//(fullName !== '' && validateCollege(college) === true) ? false : true
-							((fullName !== '' && college !== '') && (validateCollege(college) === true)) ? false : true
+							((email !== '' && fullName !== '' && college !== '') && (validateCollege(college) === true) && (validateEmail(email))) ? false : true
 						}
 						onPress={
 							() => props.navigation.navigate('CreateAccountStepTwo')
@@ -75,7 +80,6 @@ export const CreateAccountStepOne = (props) => {
 
 
 export const CreateAccountStepTwo = (props) => {
-	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [confirmPassword, setConfirmPassword] = useState('');
 
@@ -88,27 +92,12 @@ export const CreateAccountStepTwo = (props) => {
 			>
 				<TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 					<>
-						<TitleText text='Create an'/>
-						<TitleText text='account' style='red'/>
-
 						<View style={styles.inputFieldContainer}>
 							<ScrollView
 								showsVerticalScrollIndicator={false}
 								contentContainerStyle={{paddingVertical: 12}}
 								keyboardShouldPersistTaps='always'
 							>
-								<InputField
-									label='Email Address'
-									placeholder='Enter your email address'
-									onChangeText={
-										(email) => {
-											setEmail(email)
-											//validateEmail(email)
-										}
-									}
-								result={validateEmail(email) === true ? null : 'Invalid email address.'}
-								/>
-
 								<InputField
 									label='Password'
 									placeholder='Enter your password'
@@ -142,7 +131,7 @@ export const CreateAccountStepTwo = (props) => {
 					<ButtonColoured
 						title='Continue'
 						disabled={
-							((email !== '' && password !== '' && confirmPassword !== '') && (validatePassword(password) === true) && (validateConfirmPassword(password, confirmPassword) === true)) ? false : true
+							((password !== '' && confirmPassword !== '') && (validatePassword(password) === true) && (validateConfirmPassword(password, confirmPassword) === true)) ? false : true
 						}
 						onPress={
 							() => props.navigation.navigate('DataPrivacy')
