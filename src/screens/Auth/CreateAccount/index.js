@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, View, ScrollView, Platform } from 'react-native';
 import InputField from '../../../components/InputField';
-import { ButtonColoured } from '../../../components/Button';
+import { ButtonColoured, ButtonSmall } from '../../../components/Button';
 import { validateEmail, validatePassword, validateCollege, validateConfirmPassword } from './script';
 import styles from './styles';
 
@@ -121,6 +121,16 @@ export const CreateAccountStepTwo = (props) => {
 									}
 									result={validateConfirmPassword(password, confirmPassword) === true ? null : 'Password does not match.'}
 								/>
+
+								<View style={{ flex: 1, flexDirection: 'row' }}>
+									<ButtonSmall
+										title='Terms of Service'
+									/>
+									<ButtonSmall
+										title='Data Privacy'
+									/>
+								</View>
+
 							</ScrollView>
 						</View>
 					</>
@@ -129,13 +139,13 @@ export const CreateAccountStepTwo = (props) => {
 			<View>
 				<View style={styles.buttonContainer}>
 					<ButtonColoured
-						title='Continue'
+						title='Create account'
 						disabled={
 							((password !== '' && confirmPassword !== '') && (validatePassword(password) === true) && (validateConfirmPassword(password, confirmPassword) === true)) ? false : true
 						}
-						onPress={
-							() => props.navigation.navigate('DataPrivacy')
-						}
+						// onPress={
+						// 	() => props.navigation.navigate('DataPrivacy')
+						// }
 					/>
 				</View>
 			</View>
