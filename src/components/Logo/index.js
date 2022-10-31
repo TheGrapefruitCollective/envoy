@@ -5,7 +5,7 @@ import styles from './styles';
 const Logo = () => {
 	return(
 		<View style={styles.container}>
-			<Text style={styles.logoLight}>pocket</Text>
+			<Text style={styles.logoLight}>LUCAS</Text>
 		</View>
 	);
 }
