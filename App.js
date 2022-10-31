@@ -3,7 +3,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useFonts } from 'expo-font';
 import Home from './src/screens/Home';
 import { CreateAccountStepOne, CreateAccountStepTwo } from './src/screens/Auth/CreateAccount';
-import DataPrivacy from './src/screens/Auth/DataPrivacy';
 import LogIn from './src/screens/Auth/LogIn';
 import Colours from './src/components/Colours';
 
@@ -57,21 +56,6 @@ export default function App() {
 						}
 					}
 					component={CreateAccountStepTwo}
-				/>
-
-				<Stack.Screen
-					name='DataPrivacy'
-					options={
-						{
-							title: 'Data privacy',
-							headerShadowVisible: false,
-							headerTintColor: Colours.colour5,
-							headerStyle: {
-								backgroundColor: Colours.colour0,
-							}
-						}
-					}
-					component={DataPrivacy}
 				/>
 
 				<Stack.Screen
