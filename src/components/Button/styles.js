@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
 		borderRadius: 12,
 		width: 320,
 		height: 48,
-		margin: 12 / 2,
+		margin: 12,
 	},
 
 	buttonMono: {
@@ -22,7 +22,19 @@ const styles = StyleSheet.create({
 		borderRadius: 12,
 		width: 320,
 		height: 48,
-		margin: 12 / 2,
+		margin: 12,
+	},
+
+	buttonSmall: {
+		backgroundColor: Colours.colour6,
+		textAlign: 'center',
+		alignItems: 'center',
+		justifyContent: 'center',
+		width: 148,
+		height: 48,
+		marginLeft: 6,
+		marginRight: 6,
+		borderRadius: 12,
 	},
 
 	textLight: {
