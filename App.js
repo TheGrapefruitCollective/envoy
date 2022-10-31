@@ -5,6 +5,7 @@ import Home from './src/screens/Home';
 import { CreateAccountStepOne, CreateAccountStepTwo } from './src/screens/Auth/CreateAccount';
 import { TermsOfService, PrivacyPolicy } from './src/screens/Auth/DataPrivacy';
 import LogIn from './src/screens/Auth/LogIn';
+import AnnouncementUniversity from './src/screens/Dashboard/Announcements/University';
 import Colours from './src/components/Colours';
 
 
@@ -96,12 +97,28 @@ export default function App() {
 							title: 'Login account',
 							headerShadowVisible: false,
 							headerTintColor: Colours.colour6,
-								headerStyle: {
-									backgroundColor: Colours.colour0,
-								}
+							headerStyle: {
+								backgroundColor: Colours.colour0,
+							}
 						}
 					}
 					component={LogIn}
+				/>
+
+				<Stack.Screen
+					name='AnnouncementUniversity'
+					options={
+						{
+							title: 'Announcements',
+							headerBackVisible: false,
+							headerShadowVisible: false,
+							headerTintColor: Colours.colour6,
+							headerStyle: {
+								backgroundColor: Colours.colour0,
+							}
+						}
+					}
+					component={AnnouncementUniversity}
 				/>
 			</Stack.Navigator>
 		</NavigationContainer>
