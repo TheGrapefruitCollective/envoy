@@ -125,9 +125,15 @@ export const CreateAccountStepTwo = (props) => {
 								<View style={{ flex: 1, flexDirection: 'row' }}>
 									<ButtonSmall
 										title='Terms of Service'
+										onPress={
+											() => props.navigation.navigate('TermsOfService')
+										}
 									/>
 									<ButtonSmall
-										title='Data Privacy'
+										title='Privacy Policy'
+										onPress={
+											() => props.navigation.navigate('PrivacyPolicy')
+										}
 									/>
 								</View>
 

@@ -2,53 +2,21 @@ import { View, Text, Linking } from 'react-native';
 import styles from './styles';
 
 
-export const TitleText = (props) => {
+export const TextBold = (props) => {
 	return(
 		<View style={styles.container}>
-			<Text style={[
-					styles,
-					styles.title,
-					(
-						props.style == null ?
-						styles.black :
-						styles.red
-					)
-				]}
-			>
-				{props.text}
+			<Text style={styles.bold}>
+				{props.title}
 			</Text>
 		</View>
 	);
 }
 
 
-export const ParagraphText = (props) => {
+export const TextRegular = (props) => {
 	return(
 		<View style={styles.container}>
-			<Text style={[
-					styles,
-					styles.paragraph,
-					(
-						props.style == null ?
-						{fontFamily: 'Ubuntu-Regular'} :
-						{fontFamily: 'Ubuntu-Bold'}
-					)
-				]}
-			>
-				{props.text}
-			</Text>
-		</View>
-	);
-}
-
-
-export const LinkText = (props) => {
-	return(
-		<View style={styles.container}>
-			<Text
-				style={styles.link}
-				onPress={ () => Linking.openURL(props.url) }
-			>
+			<Text style={styles.regular}>
 				{props.title}
 			</Text>
 		</View>
