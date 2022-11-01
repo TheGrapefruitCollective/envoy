@@ -3,7 +3,7 @@ import { Card, Title ,Paragraph } from 'react-native-paper';
 import styles from './styles';
 
 
-export const Announcement = (props) => {
+export function Announcement(props) {
 	return(
 		<View style={styles.container}>
 			<Card style={styles.card}>
