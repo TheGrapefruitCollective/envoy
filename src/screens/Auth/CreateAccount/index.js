@@ -6,16 +6,16 @@ import { validateEmail, validatePassword, validateCollege, validateConfirmPasswo
 import styles from './styles';
 
 
-export const CreateAccountStepOne = (props) => {
+export function CreateAccountStepOne(props) {
 	const [fullName, setFullName] = useState('');
 	const [college, setCollege] = useState('');
 	const [email, setEmail] = useState('');
 
-	return(
+	return (
 		<>
 			<KeyboardAvoidingView
 				enabled
-				behavior={ Platform.OS === 'ios' ? 'padding' : null }
+				behavior={Platform.OS === 'ios' ? 'padding' : null}
 				style={styles.container}
 			>
 				<TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -23,37 +23,27 @@ export const CreateAccountStepOne = (props) => {
 						<View style={styles.inputFieldContainer}>
 							<ScrollView
 								showsVerticalScrollIndicator={false}
-								contentContainerStyle={{paddingVertical: 12}}
+								contentContainerStyle={{ paddingVertical: 12 }}
 								keyboardShouldPersistTaps='always'
 							>
 								<InputField
 									placeholder='Enter your first name'
-									onChangeText={
-										(fullName) => {
-											setFullName(fullName)
-										}
-									}
-								/>
+									onChangeText={(fullName) => {
+										setFullName(fullName);
+									} } />
 								<InputField
 									placeholder='Enter your college department'
-									onChangeText = {
-										(college) => {
-											setCollege(college)
-											//validateCollege(college)
-										}
-									}
-									result={validateCollege(college) === true ? null : 'Invalid college department.'}
-								/>
+									onChangeText={(college) => {
+										setCollege(college);
+										//validateCollege(college)
+									} }
+									result={validateCollege(college) === true ? null : 'Invalid college department.'} />
 								<InputField
 									placeholder='Enter your email address'
-									onChangeText={
-										(email) => {
-											setEmail(email)
-										}
-									}
-										result={validateEmail(email) === true ? null : 'Invalid email address.'
-									}
-								/>
+									onChangeText={(email) => {
+										setEmail(email);
+									} }
+									result={validateEmail(email) === true ? null : 'Invalid email address.'} />
 							</ScrollView>
 						</View>
 					</>
@@ -66,12 +56,8 @@ export const CreateAccountStepOne = (props) => {
 						disabled={
 							//((fullName && college) !== '') ? false : true
 							//(fullName !== '' && validateCollege(college) === true) ? false : true
-							((email !== '' && fullName !== '' && college !== '') && (validateCollege(college) === true) && (validateEmail(email))) ? false : true
-						}
-						onPress={
-							() => props.navigation.navigate('CreateAccountStepTwo')
-						}
-					/>
+							((email !== '' && fullName !== '' && college !== '') && (validateCollege(college) === true) && (validateEmail(email))) ? false : true}
+						onPress={() => props.navigation.navigate('CreateAccountStepTwo')} />
 				</View>
 			</View>
 		</>

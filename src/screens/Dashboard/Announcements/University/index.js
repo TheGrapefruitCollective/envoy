@@ -3,8 +3,8 @@ import { Announcement } from '../../../../components/Announcements';
 import styles from './styles';
 
 
-const AnnouncementUniversity = (props) => {
-	return(
+function AnnouncementUniversity(props) {
+	return (
 		<View style={styles.container}>
 			<ScrollView>
 			</ScrollView>

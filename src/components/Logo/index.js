@@ -2,8 +2,8 @@ import { Text, View } from 'react-native';
 import styles from './styles';
 
 
-const Logo = () => {
-	return(
+function Logo() {
+	return (
 		<View style={styles.container}>
 			<Text style={styles.logoLight}>LUCAS</Text>
 		</View>
