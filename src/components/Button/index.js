@@ -2,8 +2,8 @@ import { TouchableOpacity, Text } from 'react-native';
 import styles from './styles';
 
 
-export const ButtonColoured = (props) => {
-	return(
+export function ButtonColoured(props) {
+	return (
 		<TouchableOpacity
 			style={styles.buttonColoured}
 			onPress={props.onPress}
@@ -15,8 +15,8 @@ export const ButtonColoured = (props) => {
 }
 
 
-export const ButtonMono = (props) => {
-	return(
+export function ButtonMono(props) {
+	return (
 		<TouchableOpacity
 			style={styles.buttonMono}
 			onPress={props.onPress}
