@@ -5,38 +5,36 @@ import { ButtonColoured } from '../../../components/Button';
 import styles from './styles';
 
 
-const LogIn = (props) => {
-	return(
+function LogIn(props) {
+	return (
 		<>
 			<KeyboardAvoidingView
 				enabled
-				behavior={ Platform.OS === 'ios' ? 'padding' : null }
+				behavior={Platform.OS === 'ios' ? 'padding' : null}
 				style={styles.container}
 			>
 				<TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 					<>
 
-					<Logo/>
+						<Logo />
 
-					<View style={styles.inputFieldContainer}>
-						<ScrollView
-							showsVerticalScrollIndicator={false}
-							contentContainerStyle={{paddingVertical: 12}}
-							keyboardShouldPersistTaps='always'
-						>
+						<View style={styles.inputFieldContainer}>
+							<ScrollView
+								showsVerticalScrollIndicator={false}
+								contentContainerStyle={{ paddingVertical: 12 }}
+								keyboardShouldPersistTaps='always'
+							>
 
-							<InputField
-								label='Email address'
-								placeholder='Enter your email address'
-							/>
+								<InputField
+									label='Email address'
+									placeholder='Enter your email address' />
 
-							<InputField
-								label='Password'
-								placeholder='Enter your password'
-								secureTextEntry={true}
-							/>
-						</ScrollView>
-					</View>
+								<InputField
+									label='Password'
+									placeholder='Enter your password'
+									secureTextEntry={true} />
+							</ScrollView>
+						</View>
 					</>
 				</TouchableWithoutFeedback>
 			</KeyboardAvoidingView>
@@ -45,10 +43,7 @@ const LogIn = (props) => {
 				<View style={styles.buttonContainer}>
 					<ButtonColoured
 						title='Log in'
-						onPress={
-							() => props.navigation.navigate('AnnouncementUniversity')
-						}
-					/>
+						onPress={() => props.navigation.navigate('AnnouncementUniversity')} />
 				</View>
 			</View>
 		</>
