@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
 
 	inputField: {
 		color: Colours.colour5,
-		backgroundColor: Colours.colour1,
+		backgroundColor: Colours.white,
 		textAlign: 'left',
 		fontSize: 12,
 		width: 320,
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
 		paddingLeft: 12,
 		borderWidth: 1,
 		borderRadius: 12,
-		borderColor: Colours.colour3,
+		borderColor: Colours.black,
 		fontFamily: 'Ubuntu-Regular',
 		fontSize: 12,
 	},
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		flexWrap: 'wrap',
 		alignItems: 'flex-start',
-		color: Colours.colour7,
+		color: Colours.red,
 		fontSize: 12,
 		justifyContent: 'center',
 		fontFamily: 'Ubuntu-Regular',
