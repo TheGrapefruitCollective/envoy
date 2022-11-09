@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		justifyContent: 'center',
-		backgroundColor: Colours.colour0,
+		backgroundColor: Colours.white,
 	},
 
 	inputFieldContainer: {
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
 	},
 
 	buttonContainer: {
-		backgroundColor: Colours.colour0,
+		backgroundColor: Colours.white,
 		textAlign: 'center',
 		alignItems: 'center',
 		justifyContent: 'flex-end',
