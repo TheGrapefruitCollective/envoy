@@ -2,10 +2,10 @@ import { TouchableOpacity, Text } from 'react-native';
 import styles from './styles';
 
 
-export function ButtonColoured(props) {
+export function ButtonWhite(props) {
 	return (
 		<TouchableOpacity
-			style={styles.buttonColoured}
+			style={styles.buttonWhite}
 			onPress={props.onPress}
 			disabled={props.disabled}
 		>
