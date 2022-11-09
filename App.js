@@ -14,6 +14,17 @@ import Colours from './src/components/Colours';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+	const headerStyleTitle = {
+		headerTintColor: Colours.white,
+		headerStyle: {
+			backgroundColor: Colours.black,
+		},
+		headerTitleStyle: {
+			fontFamily: 'Ubuntu-Regular',
+			fontSize: 16,
+		}
+	};
+
 	const [fonts] = useFonts({
 		'Ubuntu-Regular': require('./assets/fonts/Ubuntu-Regular.ttf'),
 		'Ubuntu-Bold': require('./assets/fonts/Ubuntu-Bold.ttf'),
@@ -38,10 +49,11 @@ export default function App() {
 						{
 							title: 'Create account',
 							headerShadowVisible: false,
-							headerTintColor: Colours.colour6,
+							headerTintColor: Colours.white,
 							headerStyle: {
-								backgroundColor: Colours.colour0,
-							}
+								backgroundColor: Colours.black,
+							},
+							headerTitleStyle: headerStyleTitle,
 						}
 					}
 					component={CreateAccountStepOne}
@@ -53,10 +65,11 @@ export default function App() {
 						{
 							title: 'Create account',
 							headerShadowVisible: false,
-							headerTintColor: Colours.colour6,
+							headerTintColor: Colours.white,
 							headerStyle: {
-								backgroundColor: Colours.colour0,
-							}
+								backgroundColor: Colours.black,
+							},
+							headerTitleStyle: headerStyleTitle,
 						}
 					}
 					component={CreateAccountStepTwo}
@@ -68,10 +81,11 @@ export default function App() {
 						{
 							title: 'Terms of service',
 							headerShadowVisible: false,
-							headerTintColor: Colours.colour6,
+							headerTintColor: Colours.white,
 							headerStyle: {
-								backgroundColor: Colours.colour0,
-							}
+								backgroundColor: Colours.black,
+							},
+							headerTitleStyle: headerStyleTitle,
 						}
 					}
 					component={TermsOfService}
@@ -83,10 +97,11 @@ export default function App() {
 						{
 							title: 'Privacy policy',
 							headerShadowVisible: false,
-							headerTintColor: Colours.colour6,
+							headerTintColor: Colours.white,
 							headerStyle: {
-								backgroundColor: Colours.colour0,
-							}
+								backgroundColor: Colours.black,
+							},
+							headerTitleStyle: headerStyleTitle,
 						}
 					}
 					component={PrivacyPolicy}
@@ -98,10 +113,11 @@ export default function App() {
 						{
 							title: 'Login account',
 							headerShadowVisible: false,
-							headerTintColor: Colours.colour6,
+							headerTintColor: Colours.white,
 							headerStyle: {
-								backgroundColor: Colours.colour0,
-							}
+								backgroundColor: Colours.black,
+							},
+							headerTitleStyle: headerStyleTitle,
 						}
 					}
 					component={LogIn}
@@ -114,10 +130,11 @@ export default function App() {
 							title: 'Announcements',
 							headerBackVisible: false,
 							headerShadowVisible: false,
-							headerTintColor: Colours.colour6,
+							headerTintColor: Colours.white,
 							headerStyle: {
-								backgroundColor: Colours.colour0,
-							}
+								backgroundColor: Colours.black,
+							},
+							headerTitleStyle: headerStyleTitle,
 						}
 					}
 					component={AnnouncementUniversity}
