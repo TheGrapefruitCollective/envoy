@@ -9,8 +9,8 @@ import {
 } from './src/screens/Auth/CreateAccount';
 import { TermsOfService, PrivacyPolicy } from './src/screens/Auth/DataPrivacy';
 import LogIn from './src/screens/Auth/LogIn';
-import AnnouncementUniversity from './src/screens/Dashboard/Announcements/University';
 import Colours from './src/components/Colours';
+import AnnouncementHome from './src/screens/Dashboard/Home';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,10 +20,7 @@ export default function App() {
     headerStyle: {
       backgroundColor: Colours.black,
     },
-    headerTitleStyle: {
-      fontFamily: 'Ubuntu-Regular',
-      fontSize: 16,
-    },
+    headerTitleStyle: {},
   };
 
   const [fonts] = useFonts({
@@ -115,7 +112,7 @@ export default function App() {
         />
 
         <Stack.Screen
-          name='AnnouncementUniversity'
+          name='Announcements'
           options={{
             title: 'Announcements',
             headerBackVisible: false,
@@ -124,9 +121,12 @@ export default function App() {
             headerStyle: {
               backgroundColor: Colours.black,
             },
-            headerTitleStyle: headerStyleTitle,
+            headerTitleStyle: {
+              fontFamily: 'Ubuntu-Regular',
+              fontSize: 16,
+            },
           }}
-          component={AnnouncementUniversity}
+          component={AnnouncementHome}
         />
       </Stack.Navigator>
     </NavigationContainer>
