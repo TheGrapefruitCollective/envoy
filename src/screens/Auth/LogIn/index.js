@@ -49,7 +49,7 @@ function LogIn(props) {
         <View style={styles.buttonContainer}>
           <ButtonBlack
             title='Log in'
-            onPress={() => props.navigation.navigate('AnnouncementUniversity')}
+            onPress={() => props.navigation.navigate('Announcements')}
           />
         </View>
       </View>
