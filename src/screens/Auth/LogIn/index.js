@@ -1,7 +1,7 @@
 import { Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, View, ScrollView, Platform } from 'react-native';
 import Logo from '../../../components/Logo';
 import InputField from '../../../components/InputField';
-import { ButtonColoured } from '../../../components/Button';
+import { ButtonWhite } from '../../../components/Button';
 import styles from './styles';
 
 
@@ -41,7 +41,7 @@ function LogIn(props) {
 
 			<View>
 				<View style={styles.buttonContainer}>
-					<ButtonColoured
+					<ButtonWhite
 						title='Log in'
 						onPress={() => props.navigation.navigate('AnnouncementUniversity')} />
 				</View>

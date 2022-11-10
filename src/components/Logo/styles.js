@@ -11,10 +11,9 @@ const styles = StyleSheet.create({
 		justifyContent: 'center'
 	},
 
-	logoLight: {
-		color: Colours.colour6,
-		fontSize: 64,
-		fontFamily: 'Ubuntu-Bold',
+	logo: {
+		width: 86,
+		height: 86,
 	}
 });
 

@@ -1,11 +1,14 @@
-import { Text, View } from 'react-native';
+import { Image, View } from 'react-native';
+import envoy from '../../../assets/envoy.png';
 import styles from './styles';
 
 
 function Logo() {
 	return (
 		<View style={styles.container}>
-			<Text style={styles.logoLight}>LUCAS</Text>
+			<Image style={styles.logo}
+				source={envoy}
+			/>
 		</View>
 	);
 }

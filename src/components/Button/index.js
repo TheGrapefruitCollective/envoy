@@ -2,39 +2,14 @@ import { TouchableOpacity, Text } from 'react-native';
 import styles from './styles';
 
 
-export function ButtonColoured(props) {
+export function ButtonBlack(props) {
 	return (
 		<TouchableOpacity
-			style={styles.buttonColoured}
+			style={styles.buttonBlack}
 			onPress={props.onPress}
 			disabled={props.disabled}
 		>
-			<Text style={styles.textLight}>{props.title}</Text>
-		</TouchableOpacity>
-	);
-}
-
-
-export function ButtonMono(props) {
-	return (
-		<TouchableOpacity
-			style={styles.buttonMono}
-			onPress={props.onPress}
-			disabled={props.disabled}
-		>
-			<Text style={styles.textDark}>{props.title}</Text>
-		</TouchableOpacity>
-	);
-}
-
-
-export const ButtonSmall = (props) => {
-	return(
-		<TouchableOpacity
-			style={styles.buttonSmall}
-			onPress={props.onPress}
-		>
-			<Text style={styles.textDark}>{props.title}</Text>
+			<Text style={styles.buttonText}>{props.title}</Text>
 		</TouchableOpacity>
 	);
 }
