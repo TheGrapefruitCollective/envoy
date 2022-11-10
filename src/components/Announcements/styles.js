@@ -1,13 +1,12 @@
-import { StyleSheet } from 'react-native';
-import Colours from '../../components/Colours';
-
+import { StyleSheet } from "react-native";
+import Colours from "../../components/Colours";
 
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		alignContent: 'center',
-		alignItems: 'center',
-		justifyContent: 'center',
+		alignContent: "center",
+		alignItems: "center",
+		justifyContent: "center",
 		backgroundColor: Colours.colour0,
 	},
 
@@ -20,8 +19,7 @@ const styles = StyleSheet.create({
 
 	text: {
 		color: Colours.colour6,
-	}
+	},
 });
-
 
 export default styles;
