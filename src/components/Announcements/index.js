@@ -1,10 +1,9 @@
-import { View } from 'react-native';
-import { Card, Title ,Paragraph } from 'react-native-paper';
-import styles from './styles';
-
+import { View } from "react-native";
+import { Card, Title, Paragraph } from "react-native-paper";
+import styles from "./styles";
 
 export function Announcement(props) {
-	return(
+	return (
 		<View style={styles.container}>
 			<Card style={styles.card}>
 				<Card.Content>

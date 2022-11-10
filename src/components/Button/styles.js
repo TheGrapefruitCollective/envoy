@@ -1,30 +1,33 @@
-import { StyleSheet } from 'react-native';
-import Colours from '../Colours';
-
+import { StyleSheet } from "react-native";
+import Colours from "../Colours";
 
 const styles = StyleSheet.create({
-	buttonBlack: {
-		backgroundColor: Colours.black,
-		textAlign: 'center',
-		alignItems: 'center',
-		justifyContent: 'center',
+	button: {
+		textAlign: "center",
+		alignItems: "center",
+		justifyContent: "center",
 		borderWidth: 1,
-		borderColor: Colours.black,
 		borderRadius: 12,
 		width: 320,
 		height: 48,
 		margin: 12,
 	},
 
+	buttonBlack: {
+		backgroundColor: Colours.black,
+		borderColor: Colours.black,
+	},
+
 	buttonRed: {
-		backgroundColor: Colours.white,
+		backgroundColor: Colours.red,
+		borderColor: Colours.red,
 	},
 
 	buttonText: {
 		color: Colours.white,
-		fontFamily: 'Ubuntu-Bold',
+		fontFamily: "Ubuntu-Bold",
+		fontSize: 12,
 	},
 });
-
 
 export default styles;

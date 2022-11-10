@@ -1,24 +1,29 @@
-import { View } from 'react-native';
-import styles from './styles';
-import { ButtonWhite } from '../../components/Button';
-import Logo from '../../components/Logo';
+import { View } from "react-native";
+import Logo from "../../components/Logo";
+import { ButtonBlack } from "../../components/Button";
 
+import styles from "./styles";
 
 function Home(props) {
 	return (
 		<View style={styles.container}>
 			<Logo />
 
-			<ButtonWhite
-				title='Create Account'
-				onPress={() => { props.navigation.navigate('CreateAccountStepOne'); } } />
+			<ButtonBlack
+				title="Create Account"
+				onPress={() => {
+					props.navigation.navigate("CreateAccountStepOne");
+				}}
+			/>
 
-			<ButtonWhite
-				title='Login'
-				onPress={() => { props.navigation.navigate('LogIn'); } } />
+			<ButtonBlack
+				title="Login"
+				onPress={() => {
+					props.navigation.navigate("LogIn");
+				}}
+			/>
 		</View>
 	);
 }
-
 
 export default Home;

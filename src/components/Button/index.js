@@ -1,11 +1,23 @@
-import { TouchableOpacity, Text } from 'react-native';
-import styles from './styles';
+import { TouchableOpacity, Text } from "react-native";
 
+import styles from "./styles";
 
 export function ButtonBlack(props) {
 	return (
 		<TouchableOpacity
-			style={styles.buttonBlack}
+			style={[styles.button, styles.buttonBlack]}
+			onPress={props.onPress}
+			disabled={props.disabled}
+		>
+			<Text style={styles.buttonText}>{props.title}</Text>
+		</TouchableOpacity>
+	);
+}
+
+export function ButtonRed(props) {
+	return (
+		<TouchableOpacity
+			style={[styles.button, styles.buttonRed]}
 			onPress={props.onPress}
 			disabled={props.disabled}
 		>
