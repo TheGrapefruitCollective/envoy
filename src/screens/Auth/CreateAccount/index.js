@@ -1,21 +1,32 @@
-import { useState } from 'react';
-import { Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, View, ScrollView, Platform } from 'react-native';
-import InputField from '../../../components/InputField';
-import { ButtonWhite, ButtonSmall } from '../../../components/Button';
-import { validateEmail, validatePassword, validateCollege, validateConfirmPassword } from './script';
-import styles from './styles';
-
+import { useState } from "react";
+import {
+	Keyboard,
+	KeyboardAvoidingView,
+	TouchableWithoutFeedback,
+	View,
+	ScrollView,
+	Platform,
+} from "react-native";
+import InputField from "../../../components/InputField";
+import { ButtonBlack } from "../../../components/Button";
+import {
+	validateEmail,
+	validatePassword,
+	validateCollege,
+	validateConfirmPassword,
+} from "./script";
+import styles from "./styles";
 
 export function CreateAccountStepOne(props) {
-	const [fullName, setFullName] = useState('');
-	const [college, setCollege] = useState('');
-	const [email, setEmail] = useState('');
+	const [fullName, setFullName] = useState("");
+	const [college, setCollege] = useState("");
+	const [email, setEmail] = useState("");
 
 	return (
 		<>
 			<KeyboardAvoidingView
 				enabled
-				behavior={Platform.OS === 'ios' ? 'padding' : null}
+				behavior={Platform.OS === "ios" ? "padding" : null}
 				style={styles.container}
 			>
 				<TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -24,26 +35,37 @@ export function CreateAccountStepOne(props) {
 							<ScrollView
 								showsVerticalScrollIndicator={false}
 								contentContainerStyle={{ paddingVertical: 12 }}
-								keyboardShouldPersistTaps='always'
+								keyboardShouldPersistTaps="always"
 							>
 								<InputField
-									placeholder='Enter your first name'
+									placeholder="Enter your first name"
 									onChangeText={(fullName) => {
 										setFullName(fullName);
-									} } />
+									}}
+								/>
 								<InputField
-									placeholder='Enter your college department'
+									placeholder="Enter your college department"
 									onChangeText={(college) => {
 										setCollege(college);
 										//validateCollege(college)
-									} }
-									result={validateCollege(college) === true ? null : 'Invalid college department.'} />
+									}}
+									result={
+										validateCollege(college) === true
+											? null
+											: "Invalid college department."
+									}
+								/>
 								<InputField
-									placeholder='Enter your email address'
+									placeholder="Enter your email address"
 									onChangeText={(email) => {
 										setEmail(email);
-									} }
-									result={validateEmail(email) === true ? null : 'Invalid email address.'} />
+									}}
+									result={
+										validateEmail(email) === true
+											? null
+											: "Invalid email address."
+									}
+								/>
 							</ScrollView>
 						</View>
 					</>
@@ -51,29 +73,38 @@ export function CreateAccountStepOne(props) {
 			</KeyboardAvoidingView>
 			<View>
 				<View style={styles.buttonContainer}>
-					<ButtonWhite
-						title='Continue'
+					<ButtonBlack
+						title="Continue"
 						disabled={
 							//((fullName && college) !== '') ? false : true
 							//(fullName !== '' && validateCollege(college) === true) ? false : true
-							((email !== '' && fullName !== '' && college !== '') && (validateCollege(college) === true) && (validateEmail(email))) ? false : true}
-						onPress={() => props.navigation.navigate('CreateAccountStepTwo')} />
+							email !== "" &&
+							fullName !== "" &&
+							college !== "" &&
+							validateCollege(college) === true &&
+							validateEmail(email)
+								? false
+								: true
+						}
+						onPress={() =>
+							props.navigation.navigate("CreateAccountStepTwo")
+						}
+					/>
 				</View>
 			</View>
 		</>
 	);
 }
 
-
 export const CreateAccountStepTwo = (props) => {
-	const [password, setPassword] = useState('');
-	const [confirmPassword, setConfirmPassword] = useState('');
+	const [password, setPassword] = useState("");
+	const [confirmPassword, setConfirmPassword] = useState("");
 
-	return(
+	return (
 		<>
 			<KeyboardAvoidingView
 				enabled
-				behavior={ Platform.OS === 'ios' ? 'padding' : null }
+				behavior={Platform.OS === "ios" ? "padding" : null}
 				style={styles.container}
 			>
 				<TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -81,36 +112,43 @@ export const CreateAccountStepTwo = (props) => {
 						<View style={styles.inputFieldContainer}>
 							<ScrollView
 								showsVerticalScrollIndicator={false}
-								contentContainerStyle={{paddingVertical: 12}}
-								keyboardShouldPersistTaps='always'
+								contentContainerStyle={{ paddingVertical: 12 }}
+								keyboardShouldPersistTaps="always"
 							>
 								<InputField
-									label='Password'
-									placeholder='Enter your password'
+									label="Password"
+									placeholder="Enter your password"
 									secureTextEntry={true}
-									 onChangeText={
-										(password) => {
-											setPassword(password)
-										}
+									onChangeText={(password) => {
+										setPassword(password);
+									}}
+									result={
+										validatePassword(password) === true
+											? null
+											: "Password must be case-sensitive alphanumeric and contain special characters."
 									}
-									result={validatePassword(password) === true ? null : 'Password must be case-sensitive alphanumeric and contain special characters.'}
 								/>
 
 								<InputField
-									label='Confirm Password'
-									placeholder='Confirm password'
+									label="Confirm Password"
+									placeholder="Confirm password"
 									secureTextEntry={true}
-									onChangeText={
-										(confirmPassword) => {
-											setConfirmPassword(confirmPassword)
-										}
+									onChangeText={(confirmPassword) => {
+										setConfirmPassword(confirmPassword);
+									}}
+									result={
+										validateConfirmPassword(
+											password,
+											confirmPassword
+										) === true
+											? null
+											: "Password does not match."
 									}
-									result={validateConfirmPassword(password, confirmPassword) === true ? null : 'Password does not match.'}
 								/>
 
-								<View style={{ flex: 1, flexDirection: 'row' }}>
-								</View>
-
+								<View
+									style={{ flex: 1, flexDirection: "row" }}
+								></View>
 							</ScrollView>
 						</View>
 					</>
@@ -118,10 +156,18 @@ export const CreateAccountStepTwo = (props) => {
 			</KeyboardAvoidingView>
 			<View>
 				<View style={styles.buttonContainer}>
-					<ButtonWhite
-						title='Create account'
+					<ButtonBlack
+						title="Create account"
 						disabled={
-							((password !== '' && confirmPassword !== '') && (validatePassword(password) === true) && (validateConfirmPassword(password, confirmPassword) === true)) ? false : true
+							password !== "" &&
+							confirmPassword !== "" &&
+							validatePassword(password) === true &&
+							validateConfirmPassword(
+								password,
+								confirmPassword
+							) === true
+								? false
+								: true
 						}
 						// onPress={
 						// 	() => props.navigation.navigate('DataPrivacy')
@@ -131,4 +177,4 @@ export const CreateAccountStepTwo = (props) => {
 			</View>
 		</>
 	);
-}
+};
