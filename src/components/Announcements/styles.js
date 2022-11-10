@@ -7,18 +7,20 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: Colours.colour0,
+    backgroundColor: Colours.white,
   },
 
   card: {
-    backgroundColor: Colours.colour8,
+    backgroundColor: Colours.white,
+    borderWidth: 1,
+    borderColor: Colours.black,
     borderRadius: 12,
     margin: 12,
     width: 320,
   },
 
   text: {
-    color: Colours.colour6,
+    color: Colours.black,
   },
 });
 
