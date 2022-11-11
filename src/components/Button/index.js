@@ -1,5 +1,12 @@
-import { TouchableOpacity, Text } from 'react-native';
-import styles from './styles';
+/**
+ * Copyright (c) TheGrapefruitCollective
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+import { TouchableOpacity, Text } from "react-native";
+import styles from "./styles";
 
 export function ButtonBlack(props) {
   return (

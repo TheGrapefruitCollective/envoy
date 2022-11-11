@@ -1,16 +1,23 @@
-import * as React from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { useFonts } from 'expo-font';
-import Home from './src/screens/Home';
+/**
+ * Copyright (c) TheGrapefruitCollective
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+import * as React from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { useFonts } from "expo-font";
+import Home from "./src/screens/Home";
 import {
   CreateAccountStepOne,
   CreateAccountStepTwo,
-} from './src/screens/Auth/CreateAccount';
-import { TermsOfService, PrivacyPolicy } from './src/screens/Auth/DataPrivacy';
-import LogIn from './src/screens/Auth/LogIn';
-import Colours from './src/components/Colours';
-import AnnouncementHome from './src/screens/Dashboard/Home';
+} from "./src/screens/Auth/CreateAccount";
+import { TermsOfService, PrivacyPolicy } from "./src/screens/Auth/DataPrivacy";
+import LogIn from "./src/screens/Auth/LogIn";
+import Colours from "./src/components/Colours";
+import AnnouncementHome from "./src/screens/Dashboard/Home";
 
 const Stack = createNativeStackNavigator();
 
@@ -24,8 +31,8 @@ export default function App() {
   };
 
   const [fonts] = useFonts({
-    'Ubuntu-Regular': require('./assets/fonts/Ubuntu-Regular.ttf'),
-    'Ubuntu-Bold': require('./assets/fonts/Ubuntu-Bold.ttf'),
+    "Ubuntu-Regular": require("./assets/fonts/Ubuntu-Regular.ttf"),
+    "Ubuntu-Bold": require("./assets/fonts/Ubuntu-Bold.ttf"),
   });
 
   if (!fonts) {
@@ -34,17 +41,17 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home'>
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           options={{ headerShown: false }}
-          name='Home'
+          name="Home"
           component={Home}
         />
 
         <Stack.Screen
-          name='CreateAccountStepOne'
+          name="CreateAccountStepOne"
           options={{
-            title: 'Create account',
+            title: "Create account",
             headerShadowVisible: false,
             headerTintColor: Colours.white,
             headerStyle: {
@@ -56,9 +63,9 @@ export default function App() {
         />
 
         <Stack.Screen
-          name='CreateAccountStepTwo'
+          name="CreateAccountStepTwo"
           options={{
-            title: 'Create account',
+            title: "Create account",
             headerShadowVisible: false,
             headerTintColor: Colours.white,
             headerStyle: {
@@ -70,9 +77,9 @@ export default function App() {
         />
 
         <Stack.Screen
-          name='TermsOfService'
+          name="TermsOfService"
           options={{
-            title: 'Terms of service',
+            title: "Terms of service",
             headerShadowVisible: false,
             headerTintColor: Colours.white,
             headerStyle: {
@@ -84,9 +91,9 @@ export default function App() {
         />
 
         <Stack.Screen
-          name='PrivacyPolicy'
+          name="PrivacyPolicy"
           options={{
-            title: 'Privacy policy',
+            title: "Privacy policy",
             headerShadowVisible: false,
             headerTintColor: Colours.white,
             headerStyle: {
@@ -98,9 +105,9 @@ export default function App() {
         />
 
         <Stack.Screen
-          name='LogIn'
+          name="LogIn"
           options={{
-            title: 'Login account',
+            title: "Login account",
             headerShadowVisible: false,
             headerTintColor: Colours.white,
             headerStyle: {
@@ -112,9 +119,9 @@ export default function App() {
         />
 
         <Stack.Screen
-          name='Announcements'
+          name="Announcements"
           options={{
-            title: 'Announcements',
+            title: "Announcements",
             headerBackVisible: false,
             headerShadowVisible: false,
             headerTintColor: Colours.white,
@@ -122,7 +129,7 @@ export default function App() {
               backgroundColor: Colours.black,
             },
             headerTitleStyle: {
-              fontFamily: 'Ubuntu-Regular',
+              fontFamily: "Ubuntu-Regular",
               fontSize: 16,
             },
           }}
