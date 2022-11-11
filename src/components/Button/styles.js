@@ -1,11 +1,18 @@
-import { StyleSheet } from 'react-native';
-import Colours from '../Colours';
+/**
+ * Copyright (c) TheGrapefruitCollective
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+import { StyleSheet } from "react-native";
+import Colours from "../Colours";
 
 const styles = StyleSheet.create({
   button: {
-    textAlign: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
+    textAlign: "center",
+    alignItems: "center",
+    justifyContent: "center",
     borderWidth: 1,
     borderRadius: 12,
     width: 320,
@@ -25,7 +32,7 @@ const styles = StyleSheet.create({
 
   buttonText: {
     color: Colours.white,
-    fontFamily: 'Ubuntu-Bold',
+    fontFamily: "Ubuntu-Bold",
     fontSize: 12,
   },
 });
