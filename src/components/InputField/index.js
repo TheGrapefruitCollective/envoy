@@ -5,9 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { Text, TextInput, View } from "react-native";
-import Colours from "../Colours";
-import styles from "./styles";
+import { Text, TextInput, View } from 'react-native';
+import Colours from '../Colours';
+import styles from './styles';
 
 function InputField(props) {
   return (

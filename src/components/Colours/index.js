@@ -5,12 +5,12 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
 const Colours = StyleSheet.create({
-  black: "#0F0F0F",
-  white: "#FFFFFF",
-  red: "#E1645B",
+  black: '#0F0F0F',
+  white: '#FFFFFF',
+  red: '#E1645B',
 });
 
 export default Colours;

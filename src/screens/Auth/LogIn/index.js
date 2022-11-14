@@ -12,18 +12,18 @@ import {
   View,
   ScrollView,
   Platform,
-} from "react-native";
-import Logo from "../../../components/Logo";
-import InputField from "../../../components/InputField";
-import { ButtonBlack } from "../../../components/Button";
-import styles from "./styles";
+} from 'react-native';
+import Logo from '../../../components/Logo';
+import InputField from '../../../components/InputField';
+import { ButtonBlack } from '../../../components/Button';
+import styles from './styles';
 
 function LogIn(props) {
   return (
     <>
       <KeyboardAvoidingView
         enabled
-        behavior={Platform.OS === "ios" ? "padding" : null}
+        behavior={Platform.OS === 'ios' ? 'padding' : null}
         style={styles.container}
       >
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -34,16 +34,16 @@ function LogIn(props) {
               <ScrollView
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={{ paddingVertical: 12 }}
-                keyboardShouldPersistTaps="always"
+                keyboardShouldPersistTaps='always'
               >
                 <InputField
-                  label="Email address"
-                  placeholder="Enter your email address"
+                  label='Email address'
+                  placeholder='Enter your email address'
                 />
 
                 <InputField
-                  label="Password"
-                  placeholder="Enter your password"
+                  label='Password'
+                  placeholder='Enter your password'
                   secureTextEntry={true}
                 />
               </ScrollView>
@@ -55,8 +55,8 @@ function LogIn(props) {
       <View>
         <View style={styles.buttonContainer}>
           <ButtonBlack
-            title="Log in"
-            onPress={() => props.navigation.navigate("Announcements")}
+            title='Log in'
+            onPress={() => props.navigation.navigate('Announcements')}
           />
         </View>
       </View>

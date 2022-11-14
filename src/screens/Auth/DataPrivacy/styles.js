@@ -5,14 +5,14 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { StyleSheet } from "react-native";
-import Colours from "../../../components/Colours";
+import { StyleSheet } from 'react-native';
+import Colours from '../../../components/Colours';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    textAlign: "center",
-    alignContent: "center",
+    textAlign: 'center',
+    alignContent: 'center',
     backgroundColor: Colours.colour0,
   },
 });
