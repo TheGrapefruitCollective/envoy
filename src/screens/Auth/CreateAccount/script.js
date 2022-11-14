@@ -7,17 +7,17 @@
 
 export const validateCollege = (college) => {
   const COLLEGES = [
-    "",
-    "CEA",
-    "COLLEGE OF ENGINEERING AND ARCHITECTURE",
-    "CITC",
-    "COLLEGE OF INFORMATION TECHNOLOGY AND COMPUTING",
-    "CSM",
-    "COLLEGE OF SCIENCE AND MATHEMATICS",
-    "CSTE",
-    "COLLEGE OF SCIENCE AND TECHNOLOGY EDUCATION",
-    "COT",
-    "COLLEGE OF TECHNOLOGY",
+    '',
+    'CEA',
+    'COLLEGE OF ENGINEERING AND ARCHITECTURE',
+    'CITC',
+    'COLLEGE OF INFORMATION TECHNOLOGY AND COMPUTING',
+    'CSM',
+    'COLLEGE OF SCIENCE AND MATHEMATICS',
+    'CSTE',
+    'COLLEGE OF SCIENCE AND TECHNOLOGY EDUCATION',
+    'COT',
+    'COLLEGE OF TECHNOLOGY',
   ];
 
   if (COLLEGES.includes(college.toUpperCase()) === true) {
@@ -28,11 +28,11 @@ export const validateCollege = (college) => {
 };
 
 export const validateEmail = (email) => {
-  if (email === "") {
+  if (email === '') {
     return true;
   }
   const VALID_EMAIL = new RegExp(
-    "([a-zA-Z0-9._]{4,16})+[@]+([a-zA-Z0-9]{2,6})+[.]+[a-zA-Z0-9]{2,6}"
+    '([a-zA-Z0-9._]{4,16})+[@]+([a-zA-Z0-9]{2,6})+[.]+[a-zA-Z0-9]{2,6}'
   );
 
   if (email.search(VALID_EMAIL) === 0) {
@@ -43,12 +43,12 @@ export const validateEmail = (email) => {
 };
 
 export const validatePassword = (password) => {
-  if (password === "") {
+  if (password === '') {
     return true;
   }
 
   const VALID_PASSWORD = new RegExp(
-    "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()]){8,16}"
+    '(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()]){8,16}'
   );
 
   if (password.search(VALID_PASSWORD) === 0) {
@@ -59,7 +59,7 @@ export const validatePassword = (password) => {
 };
 
 export const validateConfirmPassword = (password, confirmPassword) => {
-  if (confirmPassword === "") {
+  if (confirmPassword === '') {
     return true;
   }
 

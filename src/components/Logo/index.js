@@ -5,9 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { Image, View } from "react-native";
-import envoy from "../../../assets/envoy.png";
-import styles from "./styles";
+import { Image, View } from 'react-native';
+import envoy from '../../../assets/envoy.png';
+import styles from './styles';
 
 function Logo() {
   return (

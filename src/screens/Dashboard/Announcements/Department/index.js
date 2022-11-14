@@ -5,9 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { View, ScrollView, Text } from "react-native";
-import { Announcement } from "../../../../components/Announcements";
-import styles from "./styles";
+import { View, ScrollView, Text } from 'react-native';
+import { Announcement } from '../../../../components/Announcements';
+import styles from './styles';
 
 function AnnouncementDepartment(props) {
   return (

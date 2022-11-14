@@ -5,11 +5,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { View } from "react-native";
-import Logo from "../../components/Logo";
-import { ButtonBlack } from "../../components/Button";
+import { View } from 'react-native';
+import Logo from '../../components/Logo';
+import { ButtonBlack } from '../../components/Button';
 
-import styles from "./styles";
+import styles from './styles';
 
 function Home(props) {
   return (
@@ -17,16 +17,16 @@ function Home(props) {
       <Logo />
 
       <ButtonBlack
-        title="Create Account"
+        title='Create Account'
         onPress={() => {
-          props.navigation.navigate("CreateAccountStepOne");
+          props.navigation.navigate('CreateAccountStepOne');
         }}
       />
 
       <ButtonBlack
-        title="Login"
+        title='Login'
         onPress={() => {
-          props.navigation.navigate("LogIn");
+          props.navigation.navigate('LogIn');
         }}
       />
     </View>
