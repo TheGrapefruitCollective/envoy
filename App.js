@@ -17,7 +17,7 @@ import {
 import { TermsOfService, PrivacyPolicy } from './src/screens/Auth/DataPrivacy';
 import LogIn from './src/screens/Auth/LogIn';
 import Colours from './src/components/Colours';
-import AnnouncementHome from './src/screens/Dashboard/Home';
+import NavigationBar from './src/screens/NavigationBar';
 
 const Stack = createNativeStackNavigator();
 
@@ -121,7 +121,7 @@ export default function App() {
         <Stack.Screen
           name='Announcements'
           options={{
-            title: 'Announcements',
+            title: 'Envoy',
             headerBackVisible: false,
             headerShadowVisible: false,
             headerTintColor: Colours.white,
@@ -133,7 +133,7 @@ export default function App() {
               fontSize: 16,
             },
           }}
-          component={AnnouncementHome}
+          component={NavigationBar}
         />
       </Stack.Navigator>
     </NavigationContainer>
