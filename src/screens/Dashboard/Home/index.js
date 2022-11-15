@@ -18,7 +18,9 @@ function AnnouncementHome() {
     <Tab.Navigator
       screenOptions={{
         tabBarActiveTintColor: Colours.black,
+        tabBarIndicatorStyle: { backgroundColor: Colours.black },
         tabBarLabelStyle: {
+          textTransform: 'none',
           width: 132,
           fontFamily: 'Ubuntu-Regular',
           fontSize: 12,
