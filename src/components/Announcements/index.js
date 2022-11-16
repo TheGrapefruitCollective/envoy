@@ -13,10 +13,8 @@ export function Announcement(props) {
   return (
     <View style={styles.container}>
       <Card style={styles.card}>
-        <Card.Content>
+        <Card.Content style={styles.cardContent}>
           <Title style={styles.text}>{props.title}</Title>
-        </Card.Content>
-        <Card.Content>
           <Paragraph style={styles.text}>{props.description}</Paragraph>
         </Card.Content>
       </Card>
