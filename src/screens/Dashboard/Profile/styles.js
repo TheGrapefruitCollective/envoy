@@ -15,7 +15,17 @@ const styles = StyleSheet.create({
     backgroundColor: Colours.white,
   },
 
-  profilePreview: {},
+  profilePreview: {
+    flexDirection: 'row',
+    height: 86,
+    width: 320,
+    marginBottom: 12,
+  },
+
+  profileInfo: {
+    marginLeft: 12,
+    justifyContent: 'center',
+  },
 
   inputFieldContainer: {
     flex: 1,
