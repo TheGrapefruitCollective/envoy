@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     width: 320,
     height: 48,
-    margin: 12,
+    margin: 12 / 2,
   },
 
   buttonBlack: {
