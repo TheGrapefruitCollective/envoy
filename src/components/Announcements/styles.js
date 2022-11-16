@@ -27,8 +27,15 @@ const styles = StyleSheet.create({
     height: 64,
   },
 
+  cardContent: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+
   text: {
     color: Colours.black,
+    fontFamily: 'Ubuntu-Regular',
+    fontSize: 12,
   },
 });
 
