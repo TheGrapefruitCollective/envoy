@@ -10,6 +10,7 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import AnnouncementHome from '../Dashboard/Announcements/AnnouncementHome';
 import Profile from '../Dashboard/Profile';
+import Menu from '../Dashboard/Menu';
 import Colours from '../../components/Colours';
 
 const Tab = createMaterialBottomTabNavigator();
@@ -38,6 +39,16 @@ function NavigationBar() {
           tabBarLabel: 'Profile',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name='account' color={color} size={24} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name='Menu'
+        component={Menu}
+        options={{
+          tabBarLabel: 'Menu',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name='menu' color={color} size={24} />
           ),
         }}
       />
