@@ -6,27 +6,41 @@
  */
 
 import { StyleSheet } from 'react-native';
-import Colours from '../Colours';
+import Colours from '../../components/Colours';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    textAlign: 'center',
     alignContent: 'center',
-    margin: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: Colours.white,
   },
 
-  regular: {
+  card: {
+    borderRadius: 12,
+    width: 86,
+    height: 86,
+    backgroundColor: Colours.black,
+  },
+
+  cardContent: {
+    flex: 1,
+    borderRadius: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  title: {
+    color: Colours.white,
+    fontFamily: 'Ubuntu-Regular',
+    fontSize: 32,
+  },
+
+  paragraph: {
     color: Colours.black,
     fontFamily: 'Ubuntu-Regular',
     fontSize: 12,
-  },
-
-  bold: {
-    color: Colours.black,
-    fontFamily: 'Ubuntu-Bold',
-    fontSize: 24,
   },
 });
 

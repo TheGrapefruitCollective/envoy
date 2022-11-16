@@ -12,10 +12,10 @@ import {
   Platform,
   TouchableWithoutFeedback,
   View,
-  Text,
 } from 'react-native';
-import Logo from '../../../components/Logo';
+import { ProfileIcon } from '../../../components/ProfileIcon';
 import { ButtonBlack } from '../../../components/Button';
+import { TextRegular } from '../../../components/Text';
 import InputField from '../../../components/InputField';
 
 import styles from './styles';
@@ -37,9 +37,12 @@ function Profile() {
                 keyboardShouldPersistTaps='always'
               >
                 <View style={styles.profilePreview}>
-                  <Text>Envoy User</Text>
-                  <Text>College Department</Text>
-                  <Text>email@domain.com</Text>
+                  <ProfileIcon />
+                  <View style={styles.profileInfo}>
+                    <TextRegular title='Envoy User' />
+                    <TextRegular title='college Department' />
+                    <TextRegular title='name@domain.com' />
+                  </View>
                 </View>
                 <InputField placeholder='Change full name' />
                 <InputField placeholder='Change college' />

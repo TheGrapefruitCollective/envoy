@@ -6,16 +6,17 @@
  */
 
 import { View, Text } from 'react-native';
+import { Card, Title, Paragraph } from 'react-native-paper';
 import styles from './styles';
 
-export function TextBold(props) {
+export function ProfileIcon() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.bold}>{props.title}</Text>
+    <View>
+      <Card style={styles.card}>
+        <Card.Content style={styles.cardContent}>
+          <Title style={styles.title}>E</Title>
+        </Card.Content>
+      </Card>
     </View>
   );
-}
-
-export function TextRegular(props) {
-  return <Text style={styles.regular}>{props.title}</Text>;
 }
