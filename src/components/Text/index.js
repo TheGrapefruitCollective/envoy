@@ -17,9 +17,5 @@ export function TextBold(props) {
 }
 
 export function TextRegular(props) {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.regular}>{props.title}</Text>
-    </View>
-  );
+  return <Text style={styles.regular}>{props.title}</Text>;
 }
