@@ -13,7 +13,6 @@ import {
   ScrollView,
   Platform,
 } from 'react-native';
-import Logo from '../../../components/Logo';
 import InputField from '../../../components/InputField';
 import { ButtonBlack } from '../../../components/Button';
 import styles from './styles';
@@ -28,8 +27,6 @@ function LogIn(props) {
       >
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <>
-            <Logo />
-
             <View style={styles.inputFieldContainer}>
               <ScrollView
                 showsVerticalScrollIndicator={false}
