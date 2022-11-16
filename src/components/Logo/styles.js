@@ -9,10 +9,15 @@ import { StyleSheet } from 'react-native';
 import Colours from '../Colours';
 
 const styles = StyleSheet.create({
-  container: {
+  logoMain: {
     flex: 1,
-    backgroundColor: Colours.colour0,
-    textAlign: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  logoMini: {
+    alignContent: 'center',
     alignItems: 'center',
     justifyContent: 'center',
   },

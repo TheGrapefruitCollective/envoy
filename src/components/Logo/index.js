@@ -11,7 +11,15 @@ import styles from './styles';
 
 function Logo() {
   return (
-    <View style={styles.container}>
+    <View style={styles.logoMain}>
+      <Image style={styles.logo} source={envoy} />
+    </View>
+  );
+}
+
+export function LogoMini() {
+  return (
+    <View style={styles.logoMini}>
       <Image style={styles.logo} source={envoy} />
     </View>
   );
