@@ -14,17 +14,17 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     alignContent: 'center',
     margin: 12,
-    backgroundColor: Colours.colour0,
+    backgroundColor: Colours.white,
   },
 
   regular: {
-    color: Colours.colour6,
+    color: Colours.black,
     fontFamily: 'Ubuntu-Regular',
     fontSize: 12,
   },
 
   bold: {
-    color: Colours.colour6,
+    color: Colours.black,
     fontFamily: 'Ubuntu-Bold',
     fontSize: 24,
   },
