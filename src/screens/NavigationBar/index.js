@@ -8,15 +8,15 @@
 import React from 'react';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import AnnouncementHome from '../Dashboard/Announcements/AnnouncementHome';
-import AnnouncementDepartment from '../Dashboard/Announcements/Department';
+import Profile from '../Dashboard/Profile';
 
 const Tab = createMaterialBottomTabNavigator();
 
 function NavigationBar() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name='University' component={AnnouncementHome} />
-      <Tab.Screen name='Department' component={AnnouncementDepartment} />
+      <Tab.Screen name='Announcements' component={AnnouncementHome} />
+      <Tab.Screen name='Profile' component={Profile} />
     </Tab.Navigator>
   );
 }
