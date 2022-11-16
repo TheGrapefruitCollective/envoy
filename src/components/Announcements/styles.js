@@ -22,8 +22,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: Colours.black,
     borderRadius: 12,
-    margin: 12,
+    margin: 12 / 2,
     width: 320,
+    height: 64,
   },
 
   text: {
