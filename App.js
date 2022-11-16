@@ -22,14 +22,6 @@ import NavigationBar from './src/screens/NavigationBar';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const headerStyleTitle = {
-    headerTintColor: Colours.white,
-    headerStyle: {
-      backgroundColor: Colours.black,
-    },
-    headerTitleStyle: {},
-  };
-
   const [fonts] = useFonts({
     'Ubuntu-Regular': require('./assets/fonts/Ubuntu-Regular.ttf'),
     'Ubuntu-Bold': require('./assets/fonts/Ubuntu-Bold.ttf'),
@@ -38,6 +30,11 @@ export default function App() {
   if (!fonts) {
     return null;
   }
+
+  const headerStyleTitle = {
+    fontFamily: 'Ubuntu-Regular',
+    fontSize: 16,
+  };
 
   return (
     <NavigationContainer>
@@ -128,10 +125,7 @@ export default function App() {
             headerStyle: {
               backgroundColor: Colours.black,
             },
-            headerTitleStyle: {
-              fontFamily: 'Ubuntu-Regular',
-              fontSize: 16,
-            },
+            headerTitleStyle: headerStyleTitle,
           }}
           component={NavigationBar}
         />
