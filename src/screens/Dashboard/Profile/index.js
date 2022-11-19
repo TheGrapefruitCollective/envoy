@@ -20,7 +20,7 @@ import InputField from '../../../components/InputField';
 
 import styles from './styles';
 
-function Profile() {
+function Profile({ navigation }) {
   return (
     <>
       <KeyboardAvoidingView
@@ -56,7 +56,10 @@ function Profile() {
       <View>
         <View style={styles.buttonContainer}>
           <ButtonBlack title='Update account' />
-          <ButtonBlack title='Log out' />
+          <ButtonBlack
+            title='Log out'
+            onPress={() => navigation.navigate('Home')}
+          />
         </View>
       </View>
     </>

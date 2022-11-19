@@ -24,7 +24,7 @@ import {
 } from './script';
 import styles from './styles';
 
-export function CreateAccountStepOne(props) {
+export function CreateAccountStepOne({ navigation }) {
   const [fullName, setFullName] = useState('');
   const [college, setCollege] = useState('');
   const [email, setEmail] = useState('');
@@ -93,7 +93,7 @@ export function CreateAccountStepOne(props) {
                 ? false
                 : true
             }
-            onPress={() => props.navigation.navigate('CreateAccountStepTwo')}
+            onPress={() => navigation.navigate('CreateAccountStepTwo')}
           />
         </View>
       </View>
@@ -101,7 +101,7 @@ export function CreateAccountStepOne(props) {
   );
 }
 
-export const CreateAccountStepTwo = (props) => {
+export const CreateAccountStepTwo = ({ navigation }) => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
@@ -166,9 +166,7 @@ export const CreateAccountStepTwo = (props) => {
                 ? false
                 : true
             }
-            // onPress={
-            // 	() => props.navigation.navigate('DataPrivacy')
-            // }
+            onPress={() => navigation.navigate('Dashboard')}
           />
         </View>
       </View>

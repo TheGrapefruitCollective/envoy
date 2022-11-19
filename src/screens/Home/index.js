@@ -11,7 +11,7 @@ import { ButtonBlack } from '../../components/Button';
 
 import styles from './styles';
 
-function Home(props) {
+function Home({ navigation }) {
   return (
     <View style={styles.container}>
       <Logo />
@@ -19,14 +19,14 @@ function Home(props) {
       <ButtonBlack
         title='Create Account'
         onPress={() => {
-          props.navigation.navigate('CreateAccountStepOne');
+          navigation.navigate('CreateAccountStepOne');
         }}
       />
 
       <ButtonBlack
         title='Login'
         onPress={() => {
-          props.navigation.navigate('LogIn');
+          navigation.navigate('LogIn');
         }}
       />
     </View>
