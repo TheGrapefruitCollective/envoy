@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
 
   buttonText: {
     color: Colours.white,
-    fontFamily: 'Ubuntu-Bold',
+    fontFamily: 'NotoSans-Bold',
     fontSize: 12,
   },
 });
