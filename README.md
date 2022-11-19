@@ -23,7 +23,7 @@
 
 `yarn`
 
-### Run `Envoy` in Android emulator
+### Run Envoy in Android emulator
 
 `yarn run android`
 
@@ -47,3 +47,5 @@ Learn more at [EAS Build - Expo Documentation](https://docs.expo.dev/build/intro
 ## License
 
 Envoy is provided under the [MIT license](./LICENSE).
+
+Envoy uses NotoSans font, licensed under the [SIL Open Font License, Version 1.1](./LICENSE-font).
