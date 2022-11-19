@@ -116,7 +116,7 @@ export default function App() {
         />
 
         <Stack.Screen
-          name='Announcements'
+          name='Dashboard'
           options={{
             title: 'Envoy',
             headerBackVisible: false,
