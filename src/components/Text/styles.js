@@ -19,13 +19,13 @@ const styles = StyleSheet.create({
 
   regular: {
     color: Colours.black,
-    fontFamily: 'Ubuntu-Regular',
+    fontFamily: 'NotoSans-Regular',
     fontSize: 12,
   },
 
   bold: {
     color: Colours.black,
-    fontFamily: 'Ubuntu-Bold',
+    fontFamily: 'NotoSans-Bold',
     fontSize: 24,
   },
 });

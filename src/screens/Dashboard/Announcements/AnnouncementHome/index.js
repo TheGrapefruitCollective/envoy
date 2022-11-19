@@ -21,7 +21,7 @@ function AnnouncementHome() {
         tabBarIndicatorStyle: { backgroundColor: Colours.black },
         tabBarLabelStyle: {
           width: 132,
-          fontFamily: 'Ubuntu-Regular',
+          fontFamily: 'NotoSans-Regular',
           fontSize: 12,
           textTransform: 'none',
         },

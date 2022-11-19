@@ -33,13 +33,13 @@ const styles = StyleSheet.create({
 
   title: {
     color: Colours.white,
-    fontFamily: 'Ubuntu-Regular',
+    fontFamily: 'NotoSans-Regular',
     fontSize: 32,
   },
 
   paragraph: {
     color: Colours.black,
-    fontFamily: 'Ubuntu-Regular',
+    fontFamily: 'NotoSans-Regular',
     fontSize: 12,
   },
 });

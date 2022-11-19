@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 12,
     borderColor: Colours.black,
-    fontFamily: 'Ubuntu-Regular',
+    fontFamily: 'NotoSans-Regular',
     fontSize: 12,
   },
 
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     color: Colours.red,
     fontSize: 12,
     justifyContent: 'center',
-    fontFamily: 'Ubuntu-Regular',
+    fontFamily: 'NotoSans-Regular',
   },
 });
 

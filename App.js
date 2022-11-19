@@ -23,8 +23,8 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [fonts] = useFonts({
-    'Ubuntu-Regular': require('./assets/fonts/Ubuntu-Regular.ttf'),
-    'Ubuntu-Bold': require('./assets/fonts/Ubuntu-Bold.ttf'),
+    'NotoSans-Regular': require('./assets/fonts/NotoSans-Regular.ttf'),
+    'NotoSans-Bold': require('./assets/fonts/NotoSans-Bold.ttf'),
   });
 
   if (!fonts) {
@@ -32,7 +32,7 @@ export default function App() {
   }
 
   const headerStyleTitle = {
-    fontFamily: 'Ubuntu-Regular',
+    fontFamily: 'NotoSans-Regular',
     fontSize: 16,
   };
 
