@@ -17,7 +17,7 @@ import InputField from '../../../components/InputField';
 import { ButtonBlack } from '../../../components/Button';
 import styles from './styles';
 
-function LogIn(props) {
+function LogIn({ navigation }) {
   return (
     <>
       <KeyboardAvoidingView
@@ -53,7 +53,7 @@ function LogIn(props) {
         <View style={styles.buttonContainer}>
           <ButtonBlack
             title='Log in'
-            onPress={() => props.navigation.navigate('Dashboard')}
+            onPress={() => navigation.navigate('Dashboard')}
           />
         </View>
       </View>
