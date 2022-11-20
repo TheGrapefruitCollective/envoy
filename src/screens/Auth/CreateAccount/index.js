@@ -23,6 +23,8 @@ import {
   validateConfirmPassword,
 } from './script';
 import styles from './styles';
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '../../../firebase/config';
 
 export function CreateAccountStepOne({ navigation }) {
   const [fullName, setFullName] = useState('');
@@ -93,7 +95,11 @@ export function CreateAccountStepOne({ navigation }) {
                 ? false
                 : true
             }
-            onPress={() => navigation.navigate('CreateAccountStepTwo')}
+            onPress={() =>
+              navigation.navigate('CreateAccountStepTwo', {
+                userCredentials: [fullName, college, email],
+              })
+            }
           />
         </View>
       </View>
@@ -101,9 +107,21 @@ export function CreateAccountStepOne({ navigation }) {
   );
 }
 
-export const CreateAccountStepTwo = ({ navigation }) => {
+export const CreateAccountStepTwo = ({ route, navigation }) => {
+  console.log(route.params.userCredentials);
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+
+  const createAccount = () => {
+    let creds = route.params.userCredentials;
+    console.log(creds[0], creds[1], creds[2], password);
+    addDoc(collection(db, 'users'), {
+      fullName: route.params.userCredentials[0],
+      college: route.params.userCredentials[1],
+      email: route.params.userCredentials[2],
+      password: password,
+    });
+  };
 
   return (
     <>
@@ -166,7 +184,9 @@ export const CreateAccountStepTwo = ({ navigation }) => {
                 ? false
                 : true
             }
-            onPress={() => navigation.navigate('Dashboard')}
+            // onPress={() => navigation.navigate('Dashboard')}
+            // onPress={() => console.log()}
+            onPress={createAccount}
           />
         </View>
       </View>
