@@ -8,7 +8,6 @@
 import { View } from 'react-native';
 import Logo from '../../components/Logo';
 import { ButtonBlack } from '../../components/Button';
-
 import styles from './styles';
 
 function Home({ navigation }) {

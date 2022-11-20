@@ -9,7 +9,7 @@ import { View, ScrollView } from 'react-native';
 import { TextBold, TextRegular } from '../../../components/Text';
 import styles from './styles';
 
-export function TermsOfService(props) {
+export function TermsOfService() {
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -20,7 +20,7 @@ export function TermsOfService(props) {
   );
 }
 
-export function PrivacyPolicy(props) {
+export function PrivacyPolicy() {
   return (
     <View style={styles.container}>
       <ScrollView>
