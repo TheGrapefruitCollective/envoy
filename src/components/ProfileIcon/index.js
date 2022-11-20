@@ -5,8 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { View, Text } from 'react-native';
-import { Card, Title, Paragraph } from 'react-native-paper';
+import { View } from 'react-native';
+import { Card, Title } from 'react-native-paper';
 import styles from './styles';
 
 export function ProfileIcon() {
