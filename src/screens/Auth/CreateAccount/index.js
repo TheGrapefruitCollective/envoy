@@ -22,9 +22,8 @@ import {
   validateCollege,
   validateConfirmPassword,
 } from './script';
+import createAccount from '../../../firebase/scripts/createAccount';
 import styles from './styles';
-import { addDoc, collection } from 'firebase/firestore';
-import { db } from '../../../firebase/config';
 
 export function CreateAccountStepOne({ navigation }) {
   const [fullName, setFullName] = useState('');
@@ -95,6 +94,7 @@ export function CreateAccountStepOne({ navigation }) {
                 ? false
                 : true
             }
+            // Pass the fullName, college, and email to the CreateAccountStepTwo screen.
             onPress={() =>
               navigation.navigate('CreateAccountStepTwo', {
                 userCredentials: [fullName, college, email],
@@ -108,20 +108,9 @@ export function CreateAccountStepOne({ navigation }) {
 }
 
 export const CreateAccountStepTwo = ({ route, navigation }) => {
-  console.log(route.params.userCredentials);
+  let userCredentials = route.params.userCredentials;
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-
-  const createAccount = () => {
-    let creds = route.params.userCredentials;
-    console.log(creds[0], creds[1], creds[2], password);
-    addDoc(collection(db, 'users'), {
-      fullName: route.params.userCredentials[0],
-      college: route.params.userCredentials[1],
-      email: route.params.userCredentials[2],
-      password: password,
-    });
-  };
 
   return (
     <>
@@ -184,9 +173,11 @@ export const CreateAccountStepTwo = ({ route, navigation }) => {
                 ? false
                 : true
             }
-            // onPress={() => navigation.navigate('Dashboard')}
-            // onPress={() => console.log()}
-            onPress={createAccount}
+            onPress={() => {
+              userCredentials.push(password);
+              createAccount(userCredentials);
+              navigation.navigate('Dashboard');
+            }}
           />
         </View>
       </View>
