@@ -22,6 +22,7 @@ import {
   validateCollege,
   validateConfirmPassword,
 } from './script';
+import createAccount from '../../../firebase/scripts/createAccount';
 import styles from './styles';
 
 export function CreateAccountStepOne({ navigation }) {
@@ -93,7 +94,12 @@ export function CreateAccountStepOne({ navigation }) {
                 ? false
                 : true
             }
-            onPress={() => navigation.navigate('CreateAccountStepTwo')}
+            // Pass the fullName, college, and email to the CreateAccountStepTwo screen.
+            onPress={() =>
+              navigation.navigate('CreateAccountStepTwo', {
+                userCredentials: [fullName, college, email],
+              })
+            }
           />
         </View>
       </View>
@@ -101,7 +107,9 @@ export function CreateAccountStepOne({ navigation }) {
   );
 }
 
-export const CreateAccountStepTwo = ({ navigation }) => {
+export const CreateAccountStepTwo = ({ route, navigation }) => {
+  let userCredentials = route.params.userCredentials;
+
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
@@ -166,7 +174,11 @@ export const CreateAccountStepTwo = ({ navigation }) => {
                 ? false
                 : true
             }
-            onPress={() => navigation.navigate('Dashboard')}
+            onPress={() => {
+              userCredentials.push(password);
+              createAccount(userCredentials);
+              navigation.navigate('Dashboard');
+            }}
           />
         </View>
       </View>
