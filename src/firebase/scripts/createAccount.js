@@ -5,17 +5,25 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { addDoc, collection, Timestamp } from 'firebase/firestore';
-import { db } from './../config';
+import { auth, db } from './../config';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { setDoc, doc } from 'firebase/firestore';
 
 const createAccount = (createAccountCredentials) => {
-  addDoc(collection(db, 'users'), {
-    fullName: createAccountCredentials[0],
-    college: createAccountCredentials[1],
-    email: createAccountCredentials[2],
-    password: createAccountCredentials[3],
-    created: Timestamp.now(),
-  });
+  createUserWithEmailAndPassword(
+    auth,
+    createAccountCredentials[2],
+    createAccountCredentials[3]
+  )
+    .then(function (data) {
+      setDoc(doc(db, 'users', data._tokenResponse.localId), {
+        fullName: createAccountCredentials[0],
+        college: createAccountCredentials[1],
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };
 
 export default createAccount;
