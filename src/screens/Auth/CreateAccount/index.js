@@ -176,8 +176,7 @@ export const CreateAccountStepTwo = ({ route, navigation }) => {
             }
             onPress={() => {
               userCredentials.push(password);
-              createAccount(userCredentials);
-              navigation.navigate('Dashboard');
+              createAccount(userCredentials, { navigation });
             }}
           />
         </View>
