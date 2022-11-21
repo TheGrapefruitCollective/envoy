@@ -9,7 +9,7 @@ import { auth, db } from './../config';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { setDoc, doc } from 'firebase/firestore';
 
-const createAccount = (createAccountCredentials) => {
+const createAccount = (createAccountCredentials, { navigation }) => {
   createUserWithEmailAndPassword(
     auth,
     createAccountCredentials[2],
@@ -20,6 +20,7 @@ const createAccount = (createAccountCredentials) => {
         fullName: createAccountCredentials[0],
         college: createAccountCredentials[1],
       });
+      navigation.navigate('Dashboard');
     })
     .catch((error) => {
       console.log(error);

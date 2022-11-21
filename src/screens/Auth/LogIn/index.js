@@ -15,9 +15,15 @@ import {
 } from 'react-native';
 import InputField from '../../../components/InputField';
 import { ButtonBlack } from '../../../components/Button';
+import loginAccount from '../../../firebase/scripts/loginAccount';
 import styles from './styles';
+import { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 function LogIn({ navigation }) {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   return (
     <>
       <KeyboardAvoidingView
@@ -36,12 +42,14 @@ function LogIn({ navigation }) {
                 <InputField
                   label='Email address'
                   placeholder='Enter your email address'
+                  onChangeText={(email) => setEmail(email)}
                 />
 
                 <InputField
                   label='Password'
                   placeholder='Enter your password'
                   secureTextEntry={true}
+                  onChangeText={(password) => setPassword(password)}
                 />
               </ScrollView>
             </View>
@@ -53,7 +61,9 @@ function LogIn({ navigation }) {
         <View style={styles.buttonContainer}>
           <ButtonBlack
             title='Log in'
-            onPress={() => navigation.navigate('Dashboard')}
+            onPress={() => {
+              loginAccount(email, password, { navigation });
+            }}
           />
         </View>
       </View>
