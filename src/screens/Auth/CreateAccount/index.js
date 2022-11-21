@@ -109,6 +109,7 @@ export function CreateAccountStepOne({ navigation }) {
 
 export const CreateAccountStepTwo = ({ route, navigation }) => {
   let userCredentials = route.params.userCredentials;
+
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
