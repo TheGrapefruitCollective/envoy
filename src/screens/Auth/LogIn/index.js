@@ -15,7 +15,7 @@ import {
 } from 'react-native';
 import InputField from '../../../components/InputField';
 import { ButtonBlack } from '../../../components/Button';
-import loginAccount from '../../../firebase/scripts/loginAccount';
+import loginAccount from '../../../firebase/Auth/loginAccount';
 import styles from './styles';
 import { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
