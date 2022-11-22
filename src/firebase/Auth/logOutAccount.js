@@ -1,4 +1,4 @@
-import { auth } from '../config';
+import { auth } from '../Firebase';
 import { signOut } from 'firebase/auth';
 
 const logOutAccount = ({ navigation }) => {

@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { auth } from './../config';
+import { auth } from '../Firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const loginAccount = (email, password, { navigation }) => {
