@@ -22,7 +22,7 @@ import {
   validateCollege,
   validateConfirmPassword,
 } from './script';
-import createAccount from '../../../firebase/scripts/createAccount';
+import createAccount from '../../../firebase/Auth/createAccount';
 import styles from './styles';
 
 export function CreateAccountStepOne({ navigation }) {
