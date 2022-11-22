@@ -17,8 +17,7 @@ import { ProfileIcon } from '../../../components/ProfileIcon';
 import { ButtonBlack } from '../../../components/Button';
 import { TextRegular } from '../../../components/Text';
 import InputField from '../../../components/InputField';
-import logOutAccount from '../../../firebase/scripts/logOutAccount';
-
+import logOutAccount from '../../../firebase/Auth/logOutAccount';
 import styles from './styles';
 
 function Profile({ navigation }) {
