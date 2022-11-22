@@ -2,13 +2,24 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
+import {
+  apiKey,
+  authDomain,
+  databaseURL,
+  projectId,
+  storageBucket,
+  messagingSenderId,
+  appId,
+} from '@env';
+
 const firebaseConfig = {
-  apiKey: '',
-  authDomain: '',
-  projectId: '',
-  storageBucket: '',
-  messagingSenderId: '',
-  appId: '',
+  apiKey: apiKey,
+  authDomain: authDomain,
+  databaseURL: databaseURL,
+  projectId: projectId,
+  storageBucket: storageBucket,
+  messagingSenderId: messagingSenderId,
+  appId: appId,
 };
 
 const app = initializeApp(firebaseConfig);
