@@ -11,25 +11,52 @@
 
 ## Development
 
-### Clone Envoy repository.
+```bash
+# Clone Envoy repository.
+git clone https://bitbucket.org/thegrapefruitcollective/envoy.git
 
-`git clone https://bitbucket.org/thegrapefruitcollective/envoy.git`
+# Checkout to dev branch.
+git checkout dev
 
-### Go to Envoy directory
+# Go to Envoy directory.
+cd envoy
 
-`cd envoy`
+# Install package dependencies.
+yarn
+```
 
-### Install package dependencies
+### Setup environment variables
 
-`yarn`
+```bash
+# Create the .env file.
+touch .env
+
+# Edit the .env file as follows.
+apiKey=<apiKey>
+authDomain=<authDomain>
+databaseURL=<databaseURL>
+projectId=<projectId>
+storageBucket=<storageBucket>
+messagingSenderId=<messagingSenderId>
+appId=<appId>
+```
 
 ### Run Envoy in Android emulator
 
-`yarn run android`
+```bash
+# Run Envoy.
+yarn run android
+
+# Run Enoy with cleared build cache.
+yarn run android --clear
+```
 
 ### Build APK.
 
-`eas build --profile production --platform android`
+```bash
+# Build Envoy APK with production profile.
+eas build --profile production --platform android
+```
 
 #### Profile:
 
