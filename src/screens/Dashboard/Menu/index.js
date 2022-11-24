@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { View } from 'react-native';
+import { Linking, View } from 'react-native';
 import { LogoMini } from '../../../components/Logo';
 import { TextRegular } from '../../../components/Text';
 import { ButtonBlack, ButtonRed } from '../../../components/Button';
@@ -26,8 +26,18 @@ function Menu({ navigation }) {
         </View>
 
         <View style={styles.buttonContainer}>
-          <ButtonBlack title='License' />
-          <ButtonBlack title='GitHub' />
+          <ButtonBlack
+            title='License'
+            onPress={() =>
+              Linking.openURL(
+                'https://github.com/cegargo/pocket/blob/master/LICENSE'
+              )
+            }
+          />
+          <ButtonBlack
+            title='GitHub'
+            onPress={() => Linking.openURL('https://github.com/cegargo/pocket')}
+          />
           <ButtonBlack
             title='Privacy Policy'
             onPress={() => navigation.navigate('PrivacyPolicy')}
