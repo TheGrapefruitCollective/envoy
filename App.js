@@ -18,6 +18,7 @@ import PrivacyPolicy from './src/screens/Auth/DataPrivacy';
 import LogIn from './src/screens/Auth/LogIn';
 import Colours from './src/components/Colours';
 import NavigationBar from './src/screens/NavigationBar';
+import ForgotPassword from './src/screens/Auth/ForgotPassword';
 
 const Stack = createNativeStackNavigator();
 
@@ -99,6 +100,20 @@ export default function App() {
             headerTitleStyle: headerStyleTitle,
           }}
           component={LogIn}
+        />
+
+        <Stack.Screen
+          name='ForgotPassword'
+          options={{
+            title: 'Reset password',
+            headerShadowVisible: false,
+            headerTintColor: Colours.white,
+            headerStyle: {
+              backgroundColor: Colours.black,
+            },
+            headerTitleStyle: headerStyleTitle,
+          }}
+          component={ForgotPassword}
         />
 
         <Stack.Screen
