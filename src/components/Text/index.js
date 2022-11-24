@@ -10,8 +10,10 @@ import styles from './styles';
 
 export function TextBold(props) {
   return (
-    <View style={styles.container} onPress={props.onPress}>
-      <Text style={styles.bold}>{props.title}</Text>
+    <View style={styles.container}>
+      <Text style={styles.bold} onPress={props.onPress}>
+        {props.title}
+      </Text>
     </View>
   );
 }
