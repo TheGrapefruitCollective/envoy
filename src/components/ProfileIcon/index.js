@@ -9,12 +9,12 @@ import { View } from 'react-native';
 import { Card, Title } from 'react-native-paper';
 import styles from './styles';
 
-export function ProfileIcon() {
+export function ProfileIcon(props) {
   return (
     <View>
       <Card style={styles.card}>
         <Card.Content style={styles.cardContent}>
-          <Title style={styles.title}>E</Title>
+          <Title style={styles.title}>{props.title}</Title>
         </Card.Content>
       </Card>
     </View>
