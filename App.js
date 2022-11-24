@@ -14,7 +14,7 @@ import {
   CreateAccountStepOne,
   CreateAccountStepTwo,
 } from './src/screens/Auth/CreateAccount';
-import { TermsOfService, PrivacyPolicy } from './src/screens/Auth/DataPrivacy';
+import PrivacyPolicy from './src/screens/Auth/DataPrivacy';
 import LogIn from './src/screens/Auth/LogIn';
 import Colours from './src/components/Colours';
 import NavigationBar from './src/screens/NavigationBar';
@@ -71,20 +71,6 @@ export default function App() {
             headerTitleStyle: headerStyleTitle,
           }}
           component={CreateAccountStepTwo}
-        />
-
-        <Stack.Screen
-          name='TermsOfService'
-          options={{
-            title: 'Terms of service',
-            headerShadowVisible: false,
-            headerTintColor: Colours.white,
-            headerStyle: {
-              backgroundColor: Colours.black,
-            },
-            headerTitleStyle: headerStyleTitle,
-          }}
-          component={TermsOfService}
         />
 
         <Stack.Screen
