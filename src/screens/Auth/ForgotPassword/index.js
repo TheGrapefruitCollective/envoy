@@ -15,14 +15,11 @@ import {
 } from 'react-native';
 import InputField from '../../../components/InputField';
 import { ButtonBlack, ButtonWhite } from '../../../components/Button';
-import loginAccount from '../../../firebase/Auth/loginAccount';
 import styles from './styles';
 import { useState } from 'react';
-import { TextBold, TextRegular } from '../../../components/Text';
 
-function LogIn({ navigation }) {
+function ForgotPassword({ navigation }) {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
 
   return (
     <>
@@ -44,17 +41,6 @@ function LogIn({ navigation }) {
                   placeholder='Enter your email address'
                   onChangeText={(email) => setEmail(email)}
                 />
-
-                <InputField
-                  label='Password'
-                  placeholder='Enter your password'
-                  secureTextEntry={true}
-                  onChangeText={(password) => setPassword(password)}
-                />
-                <TextBold
-                  title='Forgot password?'
-                  onPress={() => navigation.navigate('ForgotPassword')}
-                />
               </ScrollView>
             </View>
           </>
@@ -63,22 +49,11 @@ function LogIn({ navigation }) {
 
       <View>
         <View style={styles.buttonContainer}>
-          <ButtonBlack
-            title='Log in'
-            onPress={() => {
-              loginAccount(email, password, { navigation });
-            }}
-          />
-          <ButtonWhite
-            title='Create Accout'
-            onPress={() => {
-              navigation.navigate('CreateAccountStepOne');
-            }}
-          />
+          <ButtonBlack title='Reset password' />
         </View>
       </View>
     </>
   );
 }
 
-export default LogIn;
+export default ForgotPassword;
