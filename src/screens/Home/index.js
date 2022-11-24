@@ -7,7 +7,7 @@
 
 import { View } from 'react-native';
 import Logo from '../../components/Logo';
-import { ButtonBlack } from '../../components/Button';
+import { ButtonBlack, ButtonWhite } from '../../components/Button';
 import styles from './styles';
 
 function Home({ navigation }) {
@@ -16,16 +16,16 @@ function Home({ navigation }) {
       <Logo />
 
       <ButtonBlack
-        title='Create Account'
-        onPress={() => {
-          navigation.navigate('CreateAccountStepOne');
-        }}
-      />
-
-      <ButtonBlack
         title='Login'
         onPress={() => {
           navigation.navigate('LogIn');
+        }}
+      />
+
+      <ButtonWhite
+        title='Create Account'
+        onPress={() => {
+          navigation.navigate('CreateAccountStepOne');
         }}
       />
     </View>
