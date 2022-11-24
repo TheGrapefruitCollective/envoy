@@ -12,7 +12,7 @@ import styles from './styles';
 function PrivacyPolicy() {
   return (
     <View style={styles.container}>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <TextBold title='Privacy Policy' />
         <Text style={styles.sections}>
           Envoy is an Open Source application. This SERVICE is provided by The

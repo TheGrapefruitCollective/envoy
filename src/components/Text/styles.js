@@ -10,6 +10,7 @@ import Colours from '../Colours';
 
 const styles = StyleSheet.create({
   container: {
+    marginLeft: 12,
     flex: 1,
     textAlign: 'center',
     alignContent: 'center',
