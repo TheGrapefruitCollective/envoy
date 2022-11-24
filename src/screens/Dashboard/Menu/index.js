@@ -9,9 +9,10 @@ import { View } from 'react-native';
 import { LogoMini } from '../../../components/Logo';
 import { TextRegular } from '../../../components/Text';
 import { ButtonBlack, ButtonRed } from '../../../components/Button';
+import deleteAccount from '../../../firebase/Auth/deleteAccount';
 import styles from './styles';
 
-function Menu() {
+function Menu({ navigation }) {
   return (
     <>
       <View style={styles.container}>
@@ -31,7 +32,10 @@ function Menu() {
           <ButtonBlack title='Privacy Policy' />
         </View>
         <View style={styles.buttonDeleteContainer}>
-          <ButtonRed title='Delete account' />
+          <ButtonRed
+            title='Delete account'
+            onPress={() => deleteAccount({ navigation })}
+          />
         </View>
       </View>
     </>
