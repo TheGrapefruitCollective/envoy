@@ -6,6 +6,7 @@
  */
 
 import { StyleSheet } from 'react-native';
+import { Colors } from 'react-native-paper';
 import Colours from '../Colours';
 
 const styles = StyleSheet.create({
@@ -30,8 +31,18 @@ const styles = StyleSheet.create({
     borderColor: Colours.red,
   },
 
-  buttonText: {
+  buttonWhite: {
+    backgroundColor: Colours.white,
+    borderColor: Colours.black,
+  },
+
+  buttonTextWhite: {
     color: Colours.white,
+    fontFamily: 'NotoSans-Bold',
+    fontSize: 12,
+  },
+  buttonTextBlack: {
+    color: Colors.black,
     fontFamily: 'NotoSans-Bold',
     fontSize: 12,
   },
