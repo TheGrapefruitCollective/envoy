@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   title: {
     color: Colours.white,
     fontFamily: 'NotoSans-Regular',
-    fontSize: 32,
+    fontSize: 24,
   },
 
   paragraph: {
