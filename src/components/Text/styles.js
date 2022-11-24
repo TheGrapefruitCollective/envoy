@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlign: 'center',
     alignContent: 'center',
-    margin: 12,
     backgroundColor: Colours.white,
   },
 
@@ -26,7 +25,7 @@ const styles = StyleSheet.create({
   bold: {
     color: Colours.black,
     fontFamily: 'NotoSans-Bold',
-    fontSize: 24,
+    fontSize: 12,
   },
 });
 
