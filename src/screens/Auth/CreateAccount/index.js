@@ -24,6 +24,7 @@ import {
 } from './script';
 import createAccount from '../../../firebase/Auth/createAccount';
 import styles from './styles';
+import { TextBold } from '../../../components/Text';
 
 export function CreateAccountStepOne({ navigation }) {
   const [fullName, setFullName] = useState('');
@@ -161,6 +162,10 @@ export const CreateAccountStepTwo = ({ route, navigation }) => {
                 />
 
                 <View style={{ flex: 1, flexDirection: 'row' }}></View>
+                <TextBold
+                  title='By creating an account, you agree to our Privacy Policy'
+                  onPress={() => navigation.navigate('PrivacyPolicy')}
+                />
               </ScrollView>
             </View>
           </>
