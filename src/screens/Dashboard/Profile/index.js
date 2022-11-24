@@ -19,8 +19,11 @@ import { TextRegular } from '../../../components/Text';
 import InputField from '../../../components/InputField';
 import logOutAccount from '../../../firebase/Auth/logOutAccount';
 import styles from './styles';
+import { auth } from '../../../firebase/Firebase';
 
 function Profile({ navigation }) {
+  let email = auth.currentUser.email;
+
   return (
     <>
       <KeyboardAvoidingView
@@ -41,7 +44,7 @@ function Profile({ navigation }) {
                   <View style={styles.profileInfo}>
                     <TextRegular title='Envoy User' />
                     <TextRegular title='college Department' />
-                    <TextRegular title='name@domain.com' />
+                    <TextRegular title={email} />
                   </View>
                 </View>
                 <InputField placeholder='Change full name' />
