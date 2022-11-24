@@ -58,7 +58,6 @@ function Profile({ navigation }) {
                     <TextRegular title={email} />
                   </View>
                 </View>
-                <InputField placeholder='Change full name' />
                 <InputField placeholder='Change college' />
                 <InputField placeholder='Change email' />
                 <InputField placeholder='Change password' />
