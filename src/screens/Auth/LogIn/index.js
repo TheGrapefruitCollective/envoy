@@ -14,11 +14,10 @@ import {
   Platform,
 } from 'react-native';
 import InputField from '../../../components/InputField';
-import { ButtonBlack } from '../../../components/Button';
+import { ButtonBlack, ButtonWhite } from '../../../components/Button';
 import loginAccount from '../../../firebase/Auth/loginAccount';
 import styles from './styles';
 import { useState } from 'react';
-import { useNavigation } from '@react-navigation/native';
 
 function LogIn({ navigation }) {
   const [email, setEmail] = useState('');
@@ -63,6 +62,12 @@ function LogIn({ navigation }) {
             title='Log in'
             onPress={() => {
               loginAccount(email, password, { navigation });
+            }}
+          />
+          <ButtonWhite
+            title='Create Accout'
+            onPress={() => {
+              navigation.navigate('CreateAccountStepOne');
             }}
           />
         </View>
