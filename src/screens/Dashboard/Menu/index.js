@@ -28,8 +28,10 @@ function Menu({ navigation }) {
         <View style={styles.buttonContainer}>
           <ButtonBlack title='License' />
           <ButtonBlack title='GitHub' />
-          <ButtonBlack title='Terms of Service' />
-          <ButtonBlack title='Privacy Policy' />
+          <ButtonBlack
+            title='Privacy Policy'
+            onPress={() => navigation.navigate('PrivacyPolicy')}
+          />
         </View>
         <View style={styles.buttonDeleteContainer}>
           <ButtonRed
