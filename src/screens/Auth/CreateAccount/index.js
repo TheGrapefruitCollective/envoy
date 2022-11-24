@@ -15,7 +15,7 @@ import {
   Platform,
 } from 'react-native';
 import InputField from '../../../components/InputField';
-import { ButtonBlack } from '../../../components/Button';
+import { ButtonBlack, ButtonWhite } from '../../../components/Button';
 import {
   validateEmail,
   validatePassword,
@@ -101,6 +101,10 @@ export function CreateAccountStepOne({ navigation }) {
               })
             }
           />
+          <ButtonWhite
+            title='Login account'
+            onPress={() => navigation.navigate('LogIn')}
+          />
         </View>
       </View>
     </>
@@ -178,6 +182,10 @@ export const CreateAccountStepTwo = ({ route, navigation }) => {
               userCredentials.push(password);
               createAccount(userCredentials, { navigation });
             }}
+          />
+          <ButtonWhite
+            title='Login account'
+            onPress={() => navigation.navigate('LogIn')}
           />
         </View>
       </View>
