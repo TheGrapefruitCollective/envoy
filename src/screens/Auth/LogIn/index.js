@@ -18,6 +18,7 @@ import { ButtonBlack, ButtonWhite } from '../../../components/Button';
 import loginAccount from '../../../firebase/Auth/loginAccount';
 import styles from './styles';
 import { useState } from 'react';
+import { TextBold, TextRegular } from '../../../components/Text';
 
 function LogIn({ navigation }) {
   const [email, setEmail] = useState('');
@@ -49,6 +50,10 @@ function LogIn({ navigation }) {
                   placeholder='Enter your password'
                   secureTextEntry={true}
                   onChangeText={(password) => setPassword(password)}
+                />
+                <TextBold
+                  title='Forgot password?'
+                  onPress={() => navigation.navigate('ForgotPassword')}
                 />
               </ScrollView>
             </View>
