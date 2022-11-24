@@ -13,7 +13,17 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlign: 'center',
     alignContent: 'center',
-    backgroundColor: Colours.colour0,
+    backgroundColor: Colours.white,
+  },
+
+  sections: {
+    flex: 1,
+    marginLeft: 12,
+    marginRight: 12,
+    textAlign: 'justify',
+    borderTopColor: Colours.black,
+    borderTopWidth: StyleSheet.hairlineWidth,
+    fontFamily: 'NotoSans-Regular',
   },
 });
 
