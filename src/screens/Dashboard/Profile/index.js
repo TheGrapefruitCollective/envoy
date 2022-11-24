@@ -13,14 +13,28 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
+import { useEffect, useState } from 'react';
 import { ProfileIcon } from '../../../components/ProfileIcon';
 import { ButtonBlack } from '../../../components/Button';
 import { TextRegular } from '../../../components/Text';
 import InputField from '../../../components/InputField';
+import { auth } from '../../../firebase/Firebase';
+import getLoggedInUserData from '../../../firebase/Auth/getLoggedInUserData';
 import logOutAccount from '../../../firebase/Auth/logOutAccount';
 import styles from './styles';
 
 function Profile({ navigation }) {
+  const [userData, getUserData] = useState([]);
+
+  useEffect(() => {
+    getLoggedInUserData(auth.currentUser.uid, getUserData);
+  }, []);
+
+  let fullName = userData.fullName;
+  let initial = typeof fullName !== 'undefined' ? fullName[0] : '';
+  let college = userData.college;
+  let email = auth.currentUser.email;
+
   return (
     <>
       <KeyboardAvoidingView
@@ -37,11 +51,11 @@ function Profile({ navigation }) {
                 keyboardShouldPersistTaps='always'
               >
                 <View style={styles.profilePreview}>
-                  <ProfileIcon />
+                  <ProfileIcon title={initial} />
                   <View style={styles.profileInfo}>
-                    <TextRegular title='Envoy User' />
-                    <TextRegular title='college Department' />
-                    <TextRegular title='name@domain.com' />
+                    <TextRegular title={fullName} />
+                    <TextRegular title={college} />
+                    <TextRegular title={email} />
                   </View>
                 </View>
                 <InputField placeholder='Change full name' />
