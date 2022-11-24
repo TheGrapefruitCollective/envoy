@@ -15,7 +15,19 @@ export function ButtonBlack(props) {
       onPress={props.onPress}
       disabled={props.disabled}
     >
-      <Text style={styles.buttonText}>{props.title}</Text>
+      <Text style={styles.buttonTextWhite}>{props.title}</Text>
+    </TouchableOpacity>
+  );
+}
+
+export function ButtonWhite(props) {
+  return (
+    <TouchableOpacity
+      style={[styles.button, styles.buttonWhite]}
+      onPress={props.onPress}
+      disabled={props.disabled}
+    >
+      <Text style={styles.buttonTextBlack}>{props.title}</Text>
     </TouchableOpacity>
   );
 }
@@ -27,7 +39,7 @@ export function ButtonRed(props) {
       onPress={props.onPress}
       disabled={props.disabled}
     >
-      <Text style={styles.buttonText}>{props.title}</Text>
+      <Text style={styles.buttonTextWhite}>{props.title}</Text>
     </TouchableOpacity>
   );
 }
