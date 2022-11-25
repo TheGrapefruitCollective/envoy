@@ -17,11 +17,13 @@ import {
 import InputField from '../../../components/InputField';
 import { ButtonBlack, ButtonWhite } from '../../../components/Button';
 import {
+  validateFullName,
   validateEmail,
   validatePassword,
+  isFilled,
   validateCollege,
   validateConfirmPassword,
-} from './script';
+} from '../../../firebase/Validation';
 import createAccount from '../../../firebase/Auth/createAccount';
 import styles from './styles';
 import { TextBold } from '../../../components/Text';
@@ -30,6 +32,8 @@ export function CreateAccountStepOne({ navigation }) {
   const [fullName, setFullName] = useState('');
   const [college, setCollege] = useState('');
   const [email, setEmail] = useState('');
+
+  let filledField = isFilled([fullName, college, email]);
 
   return (
     <>
@@ -47,33 +51,25 @@ export function CreateAccountStepOne({ navigation }) {
                 keyboardShouldPersistTaps='always'
               >
                 <InputField
-                  placeholder='Enter your first name'
+                  placeholder='Enter your full name'
                   onChangeText={(fullName) => {
                     setFullName(fullName);
                   }}
+                  result={true ? validateFullName(fullName) === false : false}
                 />
                 <InputField
                   placeholder='Enter your college department'
                   onChangeText={(college) => {
                     setCollege(college);
-                    //validateCollege(college)
                   }}
-                  result={
-                    validateCollege(college) === true
-                      ? null
-                      : 'Invalid college department.'
-                  }
+                  result={true ? validateCollege(college) === false : false}
                 />
                 <InputField
                   placeholder='Enter your email address'
                   onChangeText={(email) => {
                     setEmail(email);
                   }}
-                  result={
-                    validateEmail(email) === true
-                      ? null
-                      : 'Invalid email address.'
-                  }
+                  result={true ? validateEmail(email) === false : false}
                 />
               </ScrollView>
             </View>
@@ -84,18 +80,8 @@ export function CreateAccountStepOne({ navigation }) {
         <View style={styles.buttonContainer}>
           <ButtonBlack
             title='Continue'
-            disabled={
-              //((fullName && college) !== '') ? false : true
-              //(fullName !== '' && validateCollege(college) === true) ? false : true
-              email !== '' &&
-              fullName !== '' &&
-              college !== '' &&
-              validateCollege(college) === true &&
-              validateEmail(email)
-                ? false
-                : true
-            }
-            // Pass the fullName, college, and email to the CreateAccountStepTwo screen.
+            unclick={filledField === true ? false : true}
+            disabled={filledField === true ? false : true}
             onPress={() =>
               navigation.navigate('CreateAccountStepTwo', {
                 userCredentials: [fullName, college, email],
@@ -117,6 +103,8 @@ export const CreateAccountStepTwo = ({ route, navigation }) => {
 
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+
+  let filledField = isFilled([password, confirmPassword]);
 
   return (
     <>
@@ -140,11 +128,7 @@ export const CreateAccountStepTwo = ({ route, navigation }) => {
                   onChangeText={(password) => {
                     setPassword(password);
                   }}
-                  result={
-                    validatePassword(password) === true
-                      ? null
-                      : 'Password must be case-sensitive alphanumeric and contain special characters.'
-                  }
+                  result={true ? validatePassword(password) === false : false}
                 />
 
                 <InputField
@@ -155,13 +139,13 @@ export const CreateAccountStepTwo = ({ route, navigation }) => {
                     setConfirmPassword(confirmPassword);
                   }}
                   result={
-                    validateConfirmPassword(password, confirmPassword) === true
-                      ? null
-                      : 'Password does not match.'
+                    true
+                      ? validateConfirmPassword(password, confirmPassword) ===
+                        false
+                      : false
                   }
                 />
 
-                <View style={{ flex: 1, flexDirection: 'row' }}></View>
                 <TextBold
                   title='By creating an account, you agree to our Privacy Policy'
                   onPress={() => navigation.navigate('PrivacyPolicy')}
@@ -175,14 +159,8 @@ export const CreateAccountStepTwo = ({ route, navigation }) => {
         <View style={styles.buttonContainer}>
           <ButtonBlack
             title='Create account'
-            disabled={
-              password !== '' &&
-              confirmPassword !== '' &&
-              validatePassword(password) === true &&
-              validateConfirmPassword(password, confirmPassword) === true
-                ? false
-                : true
-            }
+            unclick={filledField === true ? false : true}
+            disabled={filledField === true ? false : true}
             onPress={() => {
               userCredentials.push(password);
               createAccount(userCredentials, { navigation });
