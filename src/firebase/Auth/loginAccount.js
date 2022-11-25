@@ -8,10 +8,10 @@
 import { auth } from '../Firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
-const loginAccount = (email, password, { navigation }) => {
+const loginAccount = async (email, password, { navigation }, getResponse) => {
   signInWithEmailAndPassword(auth, email, password)
     .then(() => {
-      console.info('Successfully logged in!');
+      console.log('Success');
       navigation.navigate('Dashboard');
     })
     .catch((error) => {
@@ -19,7 +19,7 @@ const loginAccount = (email, password, { navigation }) => {
         error.code === 'auth/invalid-email' ||
         error.code === 'auth/wrong-password'
       ) {
-        console.error(error.code);
+        getResponse('Invalid username or password.');
       }
     });
 };

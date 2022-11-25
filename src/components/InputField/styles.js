@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     borderColor: Colours.black,
     fontFamily: 'NotoSans-Regular',
     fontSize: 12,
+    margin: 12 / 2,
   },
 
   result: {
@@ -35,8 +36,14 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     color: Colours.red,
     fontSize: 12,
+    marginLeft: 12,
     justifyContent: 'center',
     fontFamily: 'NotoSans-Regular',
+  },
+
+  error: {
+    borderColor: Colours.red,
+    borderWidth: 1,
   },
 });
 

@@ -11,7 +11,12 @@ import styles from './styles';
 export function ButtonBlack(props) {
   return (
     <TouchableOpacity
-      style={[styles.button, styles.buttonBlack]}
+      style={[
+        styles.button,
+        // If unclick props === true, set secondary style to buttonDisable,
+        // otherwise set it to buttonBlack.
+        props.unclick === true ? styles.buttonDisabled : styles.buttonBlack,
+      ]}
       onPress={props.onPress}
       disabled={props.disabled}
     >

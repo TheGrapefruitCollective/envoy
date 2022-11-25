@@ -36,11 +36,18 @@ const styles = StyleSheet.create({
     borderColor: Colours.black,
   },
 
+  buttonDisabled: {
+    backgroundColor: Colours.black,
+    borderColor: Colours.black,
+    opacity: 0.75,
+  },
+
   buttonTextWhite: {
     color: Colours.white,
     fontFamily: 'NotoSans-Bold',
     fontSize: 12,
   },
+
   buttonTextBlack: {
     color: Colors.black,
     fontFamily: 'NotoSans-Bold',
