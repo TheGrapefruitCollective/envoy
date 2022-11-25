@@ -14,7 +14,8 @@ import {
   Platform,
 } from 'react-native';
 import InputField from '../../../components/InputField';
-import { ButtonBlack, ButtonWhite } from '../../../components/Button';
+import { ButtonBlack } from '../../../components/Button';
+import resetAccount from '../../../firebase/Auth/resetAccount';
 import styles from './styles';
 import { useState } from 'react';
 
@@ -49,7 +50,10 @@ function ForgotPassword({ navigation }) {
 
       <View>
         <View style={styles.buttonContainer}>
-          <ButtonBlack title='Reset password' />
+          <ButtonBlack
+            title='Reset password'
+            onPress={() => resetAccount(email)}
+          />
         </View>
       </View>
     </>
