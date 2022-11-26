@@ -47,7 +47,6 @@ function LogIn({ navigation }) {
                   placeholder='Enter your email address'
                   onChangeText={(email: string) => setEmail(email)}
                   result={false}
-                  secureTextEntry={false}
                 />
 
                 <InputField
@@ -83,8 +82,6 @@ function LogIn({ navigation }) {
             onPress={() => {
               navigation.navigate('CreateAccountStepOne');
             }}
-            disabled={false}
-            unclick={false}
           />
         </View>
       </View>
