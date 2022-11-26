@@ -56,7 +56,6 @@ export function CreateAccountStepOne({ navigation }) {
                     setFullName(fullName);
                   }}
                   result={true ? validateFullName(fullName) === false : false}
-                  secureTextEntry={false}
                 />
                 <InputField
                   placeholder='Enter your college department'
@@ -64,7 +63,6 @@ export function CreateAccountStepOne({ navigation }) {
                     setCollege(college);
                   }}
                   result={true ? validateCollege(college) === false : false}
-                  secureTextEntry={false}
                 />
                 <InputField
                   placeholder='Enter your email address'
@@ -72,7 +70,6 @@ export function CreateAccountStepOne({ navigation }) {
                     setEmail(email);
                   }}
                   result={true ? validateEmail(email) === false : false}
-                  secureTextEntry={false}
                 />
               </ScrollView>
             </View>
@@ -87,15 +84,13 @@ export function CreateAccountStepOne({ navigation }) {
             disabled={filledField === true ? false : true}
             onPress={() =>
               navigation.navigate('CreateAccountStepTwo', {
-                userCredentials: [fullName, college, email],
+                userData: [fullName, college, email],
               })
             }
           />
           <ButtonWhite
             title='Login account'
             onPress={() => navigation.navigate('LogIn')}
-            disabled={false}
-            unclick={false}
           />
         </View>
       </View>
@@ -104,7 +99,7 @@ export function CreateAccountStepOne({ navigation }) {
 }
 
 export const CreateAccountStepTwo = ({ route, navigation }) => {
-  let userCredentials = route.params.userCredentials;
+  let userData = route.params.userData;
 
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -152,14 +147,6 @@ export const CreateAccountStepTwo = ({ route, navigation }) => {
                 <TextBold
                   title='By creating an account, you agree to our Privacy Policy'
                   onPress={() => navigation.navigate('PrivacyPolicy')}
-                  disabled={false}
-                  placeholder={''}
-                  result={false}
-                  secureTextEntry={false}
-                  unclick={false}
-                  onChangeText={function (params: any) {
-                    throw new Error('Function not implemented.');
-                  }}
                 />
               </ScrollView>
             </View>
@@ -173,15 +160,13 @@ export const CreateAccountStepTwo = ({ route, navigation }) => {
             unclick={filledField === true ? false : true}
             disabled={filledField === true ? false : true}
             onPress={() => {
-              userCredentials.push(password);
-              createAccount(userCredentials, { navigation });
+              userData.push(password);
+              createAccount(userData, { navigation });
             }}
           />
           <ButtonWhite
             title='Login account'
             onPress={() => navigation.navigate('LogIn')}
-            disabled={false}
-            unclick={false}
           />
         </View>
       </View>
