@@ -24,7 +24,7 @@ import logOutAccount from '../../../firebase/Auth/logOutAccount';
 import styles from './styles';
 
 function Profile({ navigation }) {
-  const [userData, getUserData] = useState([]);
+  const [userData, getUserData] = useState<any>([]);
 
   useEffect(() => {
     getLoggedInUserData(auth.currentUser.uid, getUserData);
