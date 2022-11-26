@@ -6,9 +6,9 @@
  */
 
 import * as React from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { useFonts } from 'expo-font';
 import Home from '../../screens/Home';
 import {
   CreateAccountStepOne,
@@ -16,119 +16,58 @@ import {
 } from '../../screens/Auth/CreateAccount';
 import PrivacyPolicy from '../../screens/Auth/DataPrivacy';
 import LogIn from '../../screens/Auth/LogIn';
-import Colours from '../../components/Colours';
 import NavigationBar from '../../screens/NavigationBar';
 import ForgotPassword from '../../screens/Auth/ForgotPassword';
+import HeaderOptions from '../../components/Header';
+import Font from '../../components/Font';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const Stack = createNativeStackNavigator();
 
 function Stacks() {
-  const [fonts] = useFonts({
-    'NotoSans-Regular': require('../../../assets/fonts/NotoSans-Regular.ttf'),
-    'NotoSans-Bold': require('../../../assets/fonts/NotoSans-Bold.ttf'),
-  });
-
-  if (!fonts) {
+  if (!Font()) {
     return null;
   }
-
-  const headerStyleTitle = {
-    fontFamily: 'NotoSans-Regular',
-    fontSize: 16,
-  };
-
   return (
     <NavigationContainer>
+      <StatusBar style='light' backgroundColor={Colors.black} />
       <Stack.Navigator initialRouteName='Home'>
-        <Stack.Screen
-          options={{ headerShown: false }}
-          name='Home'
-          component={Home}
-        />
+        <Stack.Screen name='Home' component={Home} options={HeaderOptions()} />
 
         <Stack.Screen
           name='CreateAccountStepOne'
-          options={{
-            title: 'Create account',
-            headerShadowVisible: false,
-            headerTintColor: Colours.white,
-            headerStyle: {
-              backgroundColor: Colours.black,
-            },
-            headerTitleStyle: headerStyleTitle,
-          }}
           component={CreateAccountStepOne}
+          options={HeaderOptions('Create account')}
         />
 
         <Stack.Screen
           name='CreateAccountStepTwo'
-          options={{
-            title: 'Create account',
-            headerShadowVisible: false,
-            headerTintColor: Colours.white,
-            headerStyle: {
-              backgroundColor: Colours.black,
-            },
-            headerTitleStyle: headerStyleTitle,
-          }}
           component={CreateAccountStepTwo}
+          options={HeaderOptions('Create account')}
         />
 
         <Stack.Screen
           name='PrivacyPolicy'
-          options={{
-            title: 'Privacy policy',
-            headerShadowVisible: false,
-            headerTintColor: Colours.white,
-            headerStyle: {
-              backgroundColor: Colours.black,
-            },
-            headerTitleStyle: headerStyleTitle,
-          }}
           component={PrivacyPolicy}
+          options={HeaderOptions('Privacy policy')}
         />
 
         <Stack.Screen
           name='LogIn'
-          options={{
-            title: 'Login account',
-            headerShadowVisible: false,
-            headerTintColor: Colours.white,
-            headerStyle: {
-              backgroundColor: Colours.black,
-            },
-            headerTitleStyle: headerStyleTitle,
-          }}
           component={LogIn}
+          options={HeaderOptions('Log in')}
         />
 
         <Stack.Screen
           name='ForgotPassword'
-          options={{
-            title: 'Reset password',
-            headerShadowVisible: false,
-            headerTintColor: Colours.white,
-            headerStyle: {
-              backgroundColor: Colours.black,
-            },
-            headerTitleStyle: headerStyleTitle,
-          }}
           component={ForgotPassword}
+          options={HeaderOptions('Reset password')}
         />
 
         <Stack.Screen
           name='Dashboard'
-          options={{
-            title: 'Envoy',
-            headerBackVisible: false,
-            headerShadowVisible: false,
-            headerTintColor: Colours.white,
-            headerStyle: {
-              backgroundColor: Colours.black,
-            },
-            headerTitleStyle: headerStyleTitle,
-          }}
           component={NavigationBar}
+          options={HeaderOptions('Envoy')}
         />
       </Stack.Navigator>
     </NavigationContainer>
