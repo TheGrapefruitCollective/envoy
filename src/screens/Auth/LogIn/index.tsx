@@ -44,17 +44,17 @@ function LogIn({ navigation }) {
                 keyboardShouldPersistTaps='always'
               >
                 <InputField
-                  label='Email address'
                   placeholder='Enter your email address'
-                  onChangeText={(email) => setEmail(email)}
+                  onChangeText={(email: string) => setEmail(email)}
+                  result={false}
+                  secureTextEntry={false}
                 />
 
                 <InputField
-                  label='Password'
                   placeholder='Enter your password'
-                  result={response}
                   secureTextEntry={true}
-                  onChangeText={(password) => setPassword(password)}
+                  onChangeText={(password: string) => setPassword(password)}
+                  result={false}
                 />
 
                 <TextBold
@@ -74,7 +74,6 @@ function LogIn({ navigation }) {
             unclick={validLogin === true ? false : true}
             disabled={validLogin === true ? false : true}
             onPress={() => {
-              console.log(`Response: ${response}.`);
               loginAccount(email, password, { navigation }, getResponse);
             }}
           />
@@ -84,6 +83,8 @@ function LogIn({ navigation }) {
             onPress={() => {
               navigation.navigate('CreateAccountStepOne');
             }}
+            disabled={false}
+            unclick={false}
           />
         </View>
       </View>

@@ -8,7 +8,7 @@
 import { db } from '../Firebase';
 import { doc, getDoc } from 'firebase/firestore';
 
-const getLoggedInUserData = async (uid, getUserData) => {
+const getLoggedInUserData = async (uid: string, getUserData: any) => {
   const docRef = doc(db, 'users', uid);
   const docSnap = await getDoc(docRef);
 

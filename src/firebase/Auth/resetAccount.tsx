@@ -8,7 +8,7 @@
 import { auth } from '../Firebase';
 import { sendPasswordResetEmail } from 'firebase/auth';
 
-const resetAccount = async (email) => {
+const resetAccount = async (email: string) => {
   sendPasswordResetEmail(auth, email)
     .then(() => {
       console.log(`Password reset email sent to: ${email}`);

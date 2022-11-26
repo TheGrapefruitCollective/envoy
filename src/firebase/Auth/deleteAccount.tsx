@@ -9,7 +9,7 @@ import { auth, db } from '../Firebase';
 import { deleteUser } from 'firebase/auth';
 import { doc, deleteDoc } from 'firebase/firestore';
 
-const deleteAccount = async (id, { navigation }) => {
+const deleteAccount = async (id: string, { navigation }) => {
   const user = auth.currentUser;
   deleteUser(user)
     .then(async () => {

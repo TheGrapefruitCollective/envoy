@@ -12,7 +12,7 @@ const VALID_PASSWORD = new RegExp(
   '(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()]){8,16}'
 );
 
-export const isFilled = (userCredentials) => {
+export const isFilled = (userCredentials: Array<string>) => {
   for (let i = 0; i < userCredentials.length; ++i) {
     if (userCredentials[i] === '') {
       return false;
@@ -21,27 +21,30 @@ export const isFilled = (userCredentials) => {
   return true;
 };
 
-export const validateFullName = (fullName) => {
+export const validateFullName = (fullName: string) => {
   if (fullName.length >= 6 && fullName.includes(' ')) return true;
   else return false;
 };
 
-export const validateCollege = (college) => {
+export const validateCollege = (college: string) => {
   if (college !== '') return true;
   else return false;
 };
 
-export const validateEmail = (email) => {
+export const validateEmail = (email: string) => {
   if (email !== '' && email.search(VALID_EMAIL) === 0) return true;
   else return false;
 };
 
-export const validatePassword = (password) => {
+export const validatePassword = (password: string) => {
   if (password !== '' && password.search(VALID_PASSWORD) === 0) return true;
   else return false;
 };
 
-export const validateConfirmPassword = (password, confirmPassword) => {
+export const validateConfirmPassword = (
+  password: string,
+  confirmPassword: string
+) => {
   if (password !== '' && confirmPassword !== '' && password === confirmPassword)
     return true;
   else return false;
@@ -51,7 +54,7 @@ export const validateCreateAccont = () => {
   console.log();
 };
 
-export const validateLogin = (email, password) => {
+export const validateLogin = (email: string, password: string) => {
   if (email !== '' && password !== '') return true;
   else false;
 };

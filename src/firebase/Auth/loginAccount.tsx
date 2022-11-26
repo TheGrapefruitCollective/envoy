@@ -8,7 +8,12 @@
 import { auth } from '../Firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
-const loginAccount = async (email, password, { navigation }, getResponse) => {
+const loginAccount = async (
+  email: string,
+  password: string,
+  { navigation },
+  getResponse: any
+) => {
   signInWithEmailAndPassword(auth, email, password)
     .then(() => {
       console.log('Success');
