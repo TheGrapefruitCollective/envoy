@@ -34,28 +34,20 @@ function Menu({ navigation }) {
                 'https://github.com/cegargo/pocket/blob/master/LICENSE'
               )
             }
-            disabled={false}
-            unclick={false}
           />
           <ButtonBlack
             title='GitHub'
             onPress={() => Linking.openURL('https://github.com/cegargo/pocket')}
-            disabled={false}
-            unclick={false}
           />
           <ButtonBlack
             title='Privacy Policy'
             onPress={() => navigation.navigate('PrivacyPolicy')}
-            disabled={false}
-            unclick={false}
           />
         </View>
         <View style={styles.buttonDeleteContainer}>
           <ButtonRed
             title='Delete account'
             onPress={() => deleteAccount(auth.currentUser.uid, { navigation })}
-            disabled={false}
-            unclick={false}
           />
         </View>
       </View>
