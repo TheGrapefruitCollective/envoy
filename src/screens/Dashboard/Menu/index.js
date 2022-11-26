@@ -11,6 +11,7 @@ import { TextRegular } from '../../../components/Text';
 import { ButtonBlack, ButtonRed } from '../../../components/Button';
 import deleteAccount from '../../../firebase/Auth/deleteAccount';
 import styles from './styles';
+import { auth } from '../../../firebase/Firebase';
 
 function Menu({ navigation }) {
   return (
@@ -46,7 +47,7 @@ function Menu({ navigation }) {
         <View style={styles.buttonDeleteContainer}>
           <ButtonRed
             title='Delete account'
-            onPress={() => deleteAccount({ navigation })}
+            onPress={() => deleteAccount(auth.currentUser.uid, { navigation })}
           />
         </View>
       </View>
