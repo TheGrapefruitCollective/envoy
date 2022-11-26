@@ -9,14 +9,15 @@ import { auth, db } from '../Firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { setDoc, doc } from 'firebase/firestore';
 
-const createAccount = (createAccountCredentials, { navigation }) => {
+const createAccount = (createAccountCredentials: any, { navigation }) => {
   createUserWithEmailAndPassword(
     auth,
     createAccountCredentials[2],
     createAccountCredentials[3]
   )
     .then(function (data) {
-      setDoc(doc(db, 'users', data._tokenResponse.localId), {
+      console.log(data);
+      setDoc(doc(db, 'users', data.user.uid), {
         fullName: createAccountCredentials[0],
         college: createAccountCredentials[1],
       });

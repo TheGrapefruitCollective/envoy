@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   },
 
   inputField: {
-    color: Colours.colour5,
+    color: Colours.black,
     backgroundColor: Colours.white,
     textAlign: 'left',
     fontSize: 12,
@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     borderColor: Colours.black,
     fontFamily: 'NotoSans-Regular',
-    fontSize: 12,
     margin: 12 / 2,
   },
 

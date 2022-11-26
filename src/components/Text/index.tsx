@@ -6,9 +6,10 @@
  */
 
 import { View, Text } from 'react-native';
+import Types from '../../Types';
 import styles from './styles';
 
-export function TextBold(props) {
+export function TextBold(props: Types) {
   return (
     <View style={styles.container}>
       <Text style={styles.bold} onPress={props.onPress}>

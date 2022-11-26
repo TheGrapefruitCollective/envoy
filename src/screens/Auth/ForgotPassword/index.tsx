@@ -19,7 +19,7 @@ import resetAccount from '../../../firebase/Auth/resetAccount';
 import styles from './styles';
 import { useState } from 'react';
 
-function ForgotPassword({ navigation }) {
+function ForgotPassword() {
   const [email, setEmail] = useState('');
 
   return (
@@ -38,9 +38,10 @@ function ForgotPassword({ navigation }) {
                 keyboardShouldPersistTaps='always'
               >
                 <InputField
-                  label='Email address'
                   placeholder='Enter your email address'
-                  onChangeText={(email) => setEmail(email)}
+                  onChangeText={(email: string) => setEmail(email)}
+                  result={false}
+                  secureTextEntry={false}
                 />
               </ScrollView>
             </View>
@@ -53,6 +54,8 @@ function ForgotPassword({ navigation }) {
           <ButtonBlack
             title='Reset password'
             onPress={() => resetAccount(email)}
+            disabled={false}
+            unclick={false}
           />
         </View>
       </View>

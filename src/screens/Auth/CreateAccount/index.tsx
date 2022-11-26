@@ -52,24 +52,27 @@ export function CreateAccountStepOne({ navigation }) {
               >
                 <InputField
                   placeholder='Enter your full name'
-                  onChangeText={(fullName) => {
+                  onChangeText={(fullName: string) => {
                     setFullName(fullName);
                   }}
                   result={true ? validateFullName(fullName) === false : false}
+                  secureTextEntry={false}
                 />
                 <InputField
                   placeholder='Enter your college department'
-                  onChangeText={(college) => {
+                  onChangeText={(college: string) => {
                     setCollege(college);
                   }}
                   result={true ? validateCollege(college) === false : false}
+                  secureTextEntry={false}
                 />
                 <InputField
                   placeholder='Enter your email address'
-                  onChangeText={(email) => {
+                  onChangeText={(email: string) => {
                     setEmail(email);
                   }}
                   result={true ? validateEmail(email) === false : false}
+                  secureTextEntry={false}
                 />
               </ScrollView>
             </View>
@@ -91,6 +94,8 @@ export function CreateAccountStepOne({ navigation }) {
           <ButtonWhite
             title='Login account'
             onPress={() => navigation.navigate('LogIn')}
+            disabled={false}
+            unclick={false}
           />
         </View>
       </View>
@@ -122,20 +127,18 @@ export const CreateAccountStepTwo = ({ route, navigation }) => {
                 keyboardShouldPersistTaps='always'
               >
                 <InputField
-                  label='Password'
                   placeholder='Enter your password'
                   secureTextEntry={true}
-                  onChangeText={(password) => {
+                  onChangeText={(password: string) => {
                     setPassword(password);
                   }}
                   result={true ? validatePassword(password) === false : false}
                 />
 
                 <InputField
-                  label='Confirm Password'
                   placeholder='Confirm password'
                   secureTextEntry={true}
-                  onChangeText={(confirmPassword) => {
+                  onChangeText={(confirmPassword: string) => {
                     setConfirmPassword(confirmPassword);
                   }}
                   result={
@@ -149,6 +152,14 @@ export const CreateAccountStepTwo = ({ route, navigation }) => {
                 <TextBold
                   title='By creating an account, you agree to our Privacy Policy'
                   onPress={() => navigation.navigate('PrivacyPolicy')}
+                  disabled={false}
+                  placeholder={''}
+                  result={false}
+                  secureTextEntry={false}
+                  unclick={false}
+                  onChangeText={function (params: any) {
+                    throw new Error('Function not implemented.');
+                  }}
                 />
               </ScrollView>
             </View>
@@ -169,6 +180,8 @@ export const CreateAccountStepTwo = ({ route, navigation }) => {
           <ButtonWhite
             title='Login account'
             onPress={() => navigation.navigate('LogIn')}
+            disabled={false}
+            unclick={false}
           />
         </View>
       </View>

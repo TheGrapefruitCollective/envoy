@@ -7,9 +7,10 @@
 
 import { View } from 'react-native';
 import { Card, Title } from 'react-native-paper';
+import Types from '../../Types';
 import styles from './styles';
 
-export function ProfileIcon(props) {
+export function ProfileIcon(props: Types) {
   return (
     <View>
       <Card style={styles.card}>

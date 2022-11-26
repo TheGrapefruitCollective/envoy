@@ -8,13 +8,18 @@
 import { TouchableOpacity, Text } from 'react-native';
 import styles from './styles';
 
-export function ButtonBlack(props) {
+type Type = {
+  disabled: boolean;
+  onPress: (params: any) => any;
+  title: string;
+  unclick: boolean;
+};
+
+export function ButtonBlack(props: Type) {
   return (
     <TouchableOpacity
       style={[
         styles.button,
-        // If unclick props === true, set secondary style to buttonDisable,
-        // otherwise set it to buttonBlack.
         props.unclick === true ? styles.buttonDisabled : styles.buttonBlack,
       ]}
       onPress={props.onPress}
@@ -25,7 +30,7 @@ export function ButtonBlack(props) {
   );
 }
 
-export function ButtonWhite(props) {
+export function ButtonWhite(props: Type) {
   return (
     <TouchableOpacity
       style={[styles.button, styles.buttonWhite]}
@@ -37,7 +42,7 @@ export function ButtonWhite(props) {
   );
 }
 
-export function ButtonRed(props) {
+export function ButtonRed(props: Type) {
   return (
     <TouchableOpacity
       style={[styles.button, styles.buttonRed]}

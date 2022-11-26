@@ -58,9 +58,30 @@ function Profile({ navigation }) {
                     <TextRegular title={email} />
                   </View>
                 </View>
-                <InputField placeholder='Change college' />
-                <InputField placeholder='Change email' />
-                <InputField placeholder='Change password' />
+                <InputField
+                  placeholder='Change college'
+                  result={false}
+                  onChangeText={function (params: any) {
+                    throw new Error('Function not implemented.');
+                  }}
+                  secureTextEntry={false}
+                />
+                <InputField
+                  placeholder='Change email'
+                  result={false}
+                  onChangeText={function (params: any) {
+                    throw new Error('Function not implemented.');
+                  }}
+                  secureTextEntry={false}
+                />
+                <InputField
+                  placeholder='Change password'
+                  result={false}
+                  onChangeText={function (params: any) {
+                    throw new Error('Function not implemented.');
+                  }}
+                  secureTextEntry={false}
+                />
               </ScrollView>
             </View>
           </>
@@ -68,10 +89,19 @@ function Profile({ navigation }) {
       </KeyboardAvoidingView>
       <View>
         <View style={styles.buttonContainer}>
-          <ButtonBlack title='Update account' />
+          <ButtonBlack
+            title='Update account'
+            disabled={false}
+            onPress={function (params: any) {
+              throw new Error('Function not implemented.');
+            }}
+            unclick={false}
+          />
           <ButtonBlack
             title='Log out'
             onPress={() => logOutAccount({ navigation })}
+            disabled={false}
+            unclick={false}
           />
         </View>
       </View>

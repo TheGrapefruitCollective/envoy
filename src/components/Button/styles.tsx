@@ -6,7 +6,6 @@
  */
 
 import { StyleSheet } from 'react-native';
-import { Colors } from 'react-native-paper';
 import Colours from '../Colours';
 
 const styles = StyleSheet.create({
@@ -49,7 +48,7 @@ const styles = StyleSheet.create({
   },
 
   buttonTextBlack: {
-    color: Colors.black,
+    color: Colours.black,
     fontFamily: 'NotoSans-Bold',
     fontSize: 12,
   },

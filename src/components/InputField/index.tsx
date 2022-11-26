@@ -5,17 +5,24 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { Text, TextInput, View } from 'react-native';
+import { TextInput, View } from 'react-native';
 import Colours from '../Colours';
 import styles from './styles';
 
-function InputField(props) {
+type Type = {
+  result: boolean;
+  placeholder: string;
+  onChangeText: (params: any) => any;
+  secureTextEntry: boolean;
+};
+
+function InputField(props: Type) {
   return (
     <View style={styles.container}>
       <TextInput
         style={[styles.inputField, props.result === true ? styles.error : null]}
         placeholder={props.placeholder}
-        placeholderTextColor={Colours.colour4}
+        placeholderTextColor={Colours.black}
         secureTextEntry={props.secureTextEntry}
         onChangeText={props.onChangeText}
       />

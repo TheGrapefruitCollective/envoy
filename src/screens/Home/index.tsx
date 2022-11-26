@@ -20,6 +20,8 @@ function Home({ navigation }) {
         onPress={() => {
           navigation.navigate('LogIn');
         }}
+        disabled={false}
+        unclick={false}
       />
 
       <ButtonWhite
@@ -27,6 +29,8 @@ function Home({ navigation }) {
         onPress={() => {
           navigation.navigate('CreateAccountStepOne');
         }}
+        disabled={false}
+        unclick={false}
       />
     </View>
   );
