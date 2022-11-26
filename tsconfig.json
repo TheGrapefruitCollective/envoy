@@ -1,0 +1,14 @@
+{
+  "extends": "expo/tsconfig.base",
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "allowJs": false,
+    "esModuleInterop": true,
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "target": "ESNext"
+  }
+}
