@@ -5,13 +5,15 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { auth } from '../Firebase';
+import { auth, db } from '../Firebase';
 import { deleteUser } from 'firebase/auth';
+import { doc, deleteDoc } from 'firebase/firestore';
 
-const deleteAccount = async ({ navigation }) => {
+const deleteAccount = async (id, { navigation }) => {
   const user = auth.currentUser;
   deleteUser(user)
-    .then(() => {
+    .then(async () => {
+      await deleteDoc(doc(db, 'users', id));
       console.log('User successfully deleted.');
       navigation.navigate('Home');
     })
