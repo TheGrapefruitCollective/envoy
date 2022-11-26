@@ -6,17 +6,11 @@
  */
 
 import { TextInput, View } from 'react-native';
+import { TypeInputField } from '../../types';
 import Colours from '../Colours';
 import styles from './styles';
 
-type Type = {
-  result: boolean;
-  placeholder: string;
-  onChangeText: (params: any) => any;
-  secureTextEntry: boolean;
-};
-
-function InputField(props: Type) {
+function InputField(props: TypeInputField) {
   return (
     <View style={styles.container}>
       <TextInput

@@ -6,16 +6,10 @@
  */
 
 import { TouchableOpacity, Text } from 'react-native';
+import { TypeButton } from '../../types';
 import styles from './styles';
 
-type Type = {
-  disabled: boolean;
-  onPress: (params: any) => any;
-  title: string;
-  unclick: boolean;
-};
-
-export function ButtonBlack(props: Type) {
+export function ButtonBlack(props: TypeButton) {
   return (
     <TouchableOpacity
       style={[
@@ -30,7 +24,7 @@ export function ButtonBlack(props: Type) {
   );
 }
 
-export function ButtonWhite(props: Type) {
+export function ButtonWhite(props: TypeButton) {
   return (
     <TouchableOpacity
       style={[styles.button, styles.buttonWhite]}
@@ -42,7 +36,7 @@ export function ButtonWhite(props: Type) {
   );
 }
 
-export function ButtonRed(props: Type) {
+export function ButtonRed(props: TypeButton) {
   return (
     <TouchableOpacity
       style={[styles.button, styles.buttonRed]}

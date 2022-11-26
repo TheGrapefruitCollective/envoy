@@ -41,7 +41,6 @@ function ForgotPassword() {
                   placeholder='Enter your email address'
                   onChangeText={(email: string) => setEmail(email)}
                   result={false}
-                  secureTextEntry={false}
                 />
               </ScrollView>
             </View>
@@ -54,8 +53,6 @@ function ForgotPassword() {
           <ButtonBlack
             title='Reset password'
             onPress={() => resetAccount(email)}
-            disabled={false}
-            unclick={false}
           />
         </View>
       </View>

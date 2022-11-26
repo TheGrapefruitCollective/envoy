@@ -9,7 +9,10 @@ import { auth, db } from '../Firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { setDoc, doc } from 'firebase/firestore';
 
-const createAccount = (createAccountCredentials: any, { navigation }) => {
+const createAccount = (
+  createAccountCredentials: Array<string>,
+  { navigation }
+) => {
   createUserWithEmailAndPassword(
     auth,
     createAccountCredentials[2],

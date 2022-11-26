@@ -6,10 +6,10 @@
  */
 
 import { View, Text } from 'react-native';
-import Types from '../../Types';
+import { TypeText } from '../../types';
 import styles from './styles';
 
-export function TextBold(props: Types) {
+export function TextBold(props: TypeText) {
   return (
     <View style={styles.container}>
       <Text style={styles.bold} onPress={props.onPress}>
@@ -19,7 +19,7 @@ export function TextBold(props: Types) {
   );
 }
 
-export function TextRegular(props) {
+export function TextRegular(props: TypeText) {
   return (
     <View style={styles.container}>
       <Text style={styles.regular} onPress={props.onPress}>
