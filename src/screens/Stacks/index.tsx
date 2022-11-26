@@ -25,9 +25,8 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 const Stack = createNativeStackNavigator();
 
 function Stacks() {
-  if (!Font()) {
-    return null;
-  }
+  if (!Font()) return null;
+
   return (
     <NavigationContainer>
       <StatusBar style='light' backgroundColor={Colors.black} />
