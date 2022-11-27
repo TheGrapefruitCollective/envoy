@@ -21,7 +21,13 @@ import InputField from '../../../components/InputField';
 import { auth } from '../../../firebase/Firebase';
 import getLoggedInUserData from '../../../firebase/Auth/getLoggedInUserData';
 import logOutAccount from '../../../firebase/Auth/logOutAccount';
+import verifyAccount from '../../../firebase/Auth/verifyAccount';
 import styles from './styles';
+import {
+  updateAccountCollege,
+  updateAccountEmail,
+  updateAccountPassword,
+} from '../../../firebase/Auth/updateAccount';
 
 function Profile({ navigation }) {
   const [userData, getUserData] = useState<any>([]);
@@ -30,10 +36,15 @@ function Profile({ navigation }) {
     getLoggedInUserData(auth.currentUser.uid, getUserData);
   }, []);
 
-  let fullName = userData.fullName;
-  let initial = typeof fullName !== 'undefined' ? fullName[0] : '';
-  let college = userData.college;
-  let email = auth.currentUser.email;
+  let initial =
+    typeof userData.fullName !== 'undefined' ? userData.fullName[0] : '';
+  let emailVerified =
+    auth.currentUser.emailVerified === true ? '' : '(Not verified)';
+
+  const [newCollege, setNewCollege] = useState('');
+  const [newEmail, setNewEmail] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [password, setPassword] = useState('');
 
   return (
     <>
@@ -53,34 +64,40 @@ function Profile({ navigation }) {
                 <View style={styles.profilePreview}>
                   <ProfileIcon title={initial} />
                   <View style={styles.profileInfo}>
-                    <TextRegular title={fullName} />
-                    <TextRegular title={college} />
-                    <TextRegular title={email} />
+                    <TextRegular title={userData.fullName} />
+                    <TextRegular title={userData.college} />
+                    <TextRegular
+                      title={`${auth.currentUser.email} ${emailVerified}`}
+                      onPress={() => {
+                        emailVerified === ''
+                          ? null
+                          : verifyAccount(auth.currentUser);
+                      }}
+                    />
                   </View>
                 </View>
                 <InputField
-                  placeholder='Change college'
+                  placeholder='Enter new college'
                   result={false}
-                  onChangeText={function (params: any) {
-                    throw new Error('Function not implemented.');
-                  }}
-                  secureTextEntry={false}
+                  onChangeText={(newCollege) => setNewCollege(newCollege)}
                 />
                 <InputField
-                  placeholder='Change email'
+                  placeholder='Enter new email'
                   result={false}
-                  onChangeText={function (params: any) {
-                    throw new Error('Function not implemented.');
-                  }}
-                  secureTextEntry={false}
+                  onChangeText={(newEmail) => setNewEmail(newEmail)}
                 />
                 <InputField
-                  placeholder='Change password'
+                  placeholder='Enter new password'
                   result={false}
-                  onChangeText={function (params: any) {
-                    throw new Error('Function not implemented.');
-                  }}
-                  secureTextEntry={false}
+                  onChangeText={(newPassword) => setNewPassword(newPassword)}
+                  secureTextEntry={true}
+                />
+
+                <InputField
+                  placeholder='Enter your password to confirm'
+                  result={false}
+                  onChangeText={(password) => setPassword(password)}
+                  secureTextEntry={true}
                 />
               </ScrollView>
             </View>
@@ -91,17 +108,33 @@ function Profile({ navigation }) {
         <View style={styles.buttonContainer}>
           <ButtonBlack
             title='Update account'
-            disabled={false}
-            onPress={function (params: any) {
-              throw new Error('Function not implemented.');
+            onPress={() => {
+              console.log(
+                auth.currentUser.uid,
+                newCollege,
+                newEmail,
+                newPassword
+              );
+              updateAccountCollege(auth.currentUser.uid, newCollege);
+              updateAccountEmail(auth.currentUser, newEmail);
+              updateAccountPassword(auth.currentUser, newPassword);
             }}
-            unclick={false}
+            unclick={
+              (newCollege !== '' || newEmail !== '' || newPassword !== '') &&
+              password !== ''
+                ? false
+                : true
+            }
+            disabled={
+              (newCollege !== '' || newEmail !== '' || newPassword !== '') &&
+              password !== ''
+                ? false
+                : true
+            }
           />
           <ButtonBlack
             title='Log out'
             onPress={() => logOutAccount({ navigation })}
-            disabled={false}
-            unclick={false}
           />
         </View>
       </View>
