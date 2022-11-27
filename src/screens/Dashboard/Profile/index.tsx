@@ -21,6 +21,7 @@ import InputField from '../../../components/InputField';
 import { auth } from '../../../firebase/Firebase';
 import getLoggedInUserData from '../../../firebase/Auth/getLoggedInUserData';
 import logOutAccount from '../../../firebase/Auth/logOutAccount';
+import verifyAccount from '../../../firebase/Auth/verifyAccount';
 import styles from './styles';
 
 function Profile({ navigation }) {
@@ -34,6 +35,8 @@ function Profile({ navigation }) {
   let initial = typeof fullName !== 'undefined' ? fullName[0] : '';
   let college = userData.college;
   let email = auth.currentUser.email;
+  let emailVerified =
+    auth.currentUser.emailVerified === true ? '' : '(Not verified)';
 
   return (
     <>
@@ -55,7 +58,14 @@ function Profile({ navigation }) {
                   <View style={styles.profileInfo}>
                     <TextRegular title={fullName} />
                     <TextRegular title={college} />
-                    <TextRegular title={email} />
+                    <TextRegular
+                      title={`${email} ${emailVerified}`}
+                      onPress={() => {
+                        emailVerified === ''
+                          ? null
+                          : verifyAccount(auth.currentUser);
+                      }}
+                    />
                   </View>
                 </View>
                 <InputField
