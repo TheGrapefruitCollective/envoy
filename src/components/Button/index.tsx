@@ -12,10 +12,7 @@ import styles from './styles';
 export function ButtonBlack(props: TypeButton) {
   return (
     <TouchableOpacity
-      style={[
-        styles.button,
-        props.unclick === true ? styles.buttonDisabled : styles.buttonBlack,
-      ]}
+      style={[styles.button, props.unclick === true ? styles.buttonDisabled : styles.buttonBlack]}
       onPress={props.onPress}
       disabled={props.disabled}
     >
@@ -26,11 +23,7 @@ export function ButtonBlack(props: TypeButton) {
 
 export function ButtonWhite(props: TypeButton) {
   return (
-    <TouchableOpacity
-      style={[styles.button, styles.buttonWhite]}
-      onPress={props.onPress}
-      disabled={props.disabled}
-    >
+    <TouchableOpacity style={[styles.button, styles.buttonWhite]} onPress={props.onPress} disabled={props.disabled}>
       <Text style={styles.buttonTextBlack}>{props.title}</Text>
     </TouchableOpacity>
   );
@@ -38,11 +31,7 @@ export function ButtonWhite(props: TypeButton) {
 
 export function ButtonRed(props: TypeButton) {
   return (
-    <TouchableOpacity
-      style={[styles.button, styles.buttonRed]}
-      onPress={props.onPress}
-      disabled={props.disabled}
-    >
+    <TouchableOpacity style={[styles.button, styles.buttonRed]} onPress={props.onPress} disabled={props.disabled}>
       <Text style={styles.buttonTextWhite}>{props.title}</Text>
     </TouchableOpacity>
   );
