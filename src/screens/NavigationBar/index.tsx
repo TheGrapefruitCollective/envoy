@@ -26,9 +26,7 @@ function NavigationBar() {
         component={AnnouncementHome}
         options={{
           tabBarLabel: 'Announcements',
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name='card-text' color={color} size={24} />
-          ),
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name='card-text' color={color} size={24} />,
         }}
       />
       <Tab.Screen
@@ -36,9 +34,7 @@ function NavigationBar() {
         component={Profile}
         options={{
           tabBarLabel: 'Profile',
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name='account' color={color} size={24} />
-          ),
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name='account' color={color} size={24} />,
         }}
       />
       <Tab.Screen
@@ -46,9 +42,7 @@ function NavigationBar() {
         component={Menu}
         options={{
           tabBarLabel: 'Menu',
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name='menu' color={color} size={24} />
-          ),
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name='menu' color={color} size={24} />,
         }}
       />
     </Tab.Navigator>

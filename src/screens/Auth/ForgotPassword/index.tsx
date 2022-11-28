@@ -5,14 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import {
-  Keyboard,
-  KeyboardAvoidingView,
-  TouchableWithoutFeedback,
-  View,
-  ScrollView,
-  Platform,
-} from 'react-native';
+import { Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, View, ScrollView, Platform } from 'react-native';
 import InputField from '../../../components/InputField';
 import { ButtonBlack } from '../../../components/Button';
 import resetAccount from '../../../firebase/Auth/resetAccount';
@@ -24,11 +17,7 @@ function ForgotPassword() {
 
   return (
     <>
-      <KeyboardAvoidingView
-        enabled
-        behavior={Platform.OS === 'ios' ? 'padding' : null}
-        style={styles.container}
-      >
+      <KeyboardAvoidingView enabled behavior={Platform.OS === 'ios' ? 'padding' : null} style={styles.container}>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <>
             <View style={styles.inputFieldContainer}>
@@ -50,10 +39,7 @@ function ForgotPassword() {
 
       <View>
         <View style={styles.buttonContainer}>
-          <ButtonBlack
-            title='Reset password'
-            onPress={() => resetAccount(email)}
-          />
+          <ButtonBlack title='Reset password' onPress={() => resetAccount(email)} />
         </View>
       </View>
     </>
