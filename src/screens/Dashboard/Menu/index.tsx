@@ -29,26 +29,13 @@ function Menu({ navigation }) {
         <View style={styles.buttonContainer}>
           <ButtonBlack
             title='License'
-            onPress={() =>
-              Linking.openURL(
-                'https://github.com/cegargo/pocket/blob/master/LICENSE'
-              )
-            }
+            onPress={() => Linking.openURL('https://github.com/cegargo/pocket/blob/master/LICENSE')}
           />
-          <ButtonBlack
-            title='GitHub'
-            onPress={() => Linking.openURL('https://github.com/cegargo/pocket')}
-          />
-          <ButtonBlack
-            title='Privacy Policy'
-            onPress={() => navigation.navigate('PrivacyPolicy')}
-          />
+          <ButtonBlack title='GitHub' onPress={() => Linking.openURL('https://github.com/cegargo/pocket')} />
+          <ButtonBlack title='Privacy Policy' onPress={() => navigation.navigate('PrivacyPolicy')} />
         </View>
         <View style={styles.buttonDeleteContainer}>
-          <ButtonRed
-            title='Delete account'
-            onPress={() => deleteAccount(auth.currentUser.uid, { navigation })}
-          />
+          <ButtonRed title='Delete account' onPress={() => deleteAccount(auth.currentUser.uid, { navigation })} />
         </View>
       </View>
     </>
