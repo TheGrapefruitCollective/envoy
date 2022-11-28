@@ -18,27 +18,22 @@ export const isFilled = (userCredentials: Array<string>) => {
 };
 
 export const validateFullName = (fullName: string) => {
-  if (fullName.length >= 6 && fullName.includes(' ')) return true;
-  else return false;
-};
-
-export const validateCollege = (college: string) => {
-  if (college !== '') return true;
+  if (fullName === '' || (fullName.length >= 6 && fullName.includes(' '))) return true;
   else return false;
 };
 
 export const validateEmail = (email: string) => {
-  if (email !== '' && email.search(VALID_EMAIL) === 0) return true;
+  if (email === '' || email.search(VALID_EMAIL) === 0) return true;
   else return false;
 };
 
 export const validatePassword = (password: string) => {
-  if (password !== '' && password.search(VALID_PASSWORD) === 0) return true;
+  if (password === '' || password.search(VALID_PASSWORD) === 0) return true;
   else return false;
 };
 
 export const validateConfirmPassword = (password: string, confirmPassword: string) => {
-  if (password !== '' && confirmPassword !== '' && password === confirmPassword) return true;
+  if (password === confirmPassword) return true;
   else return false;
 };
 
