@@ -85,8 +85,8 @@ export function CreateAccountStepOne({ navigation }): JSX.Element {
 export function CreateAccountStepTwo({ route, navigation }): JSX.Element {
   let userData = route.params.userData;
 
-  const [visiblePassword, setVisiblePassword] = React.useState(false);
-  const [visibleConfirmPassword, setVisibleConfirmPassword] = React.useState(false);
+  const [visiblePassword, setVisiblePassword] = React.useState(true);
+  const [visibleConfirmPassword, setVisibleConfirmPassword] = React.useState(true);
 
   const [password, setPassword] = React.useState('');
   const [confirmPassword, setConfirmPassword] = React.useState('');
