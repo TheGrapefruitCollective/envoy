@@ -59,8 +59,39 @@ export const validateLogin = (email: string, password: string) => {
   else false;
 };
 
-function UserFeedback() {
-  console.log('UserFeeback');
-}
+/**
+ *
+ * @param email
+ * @param userData
+ * @param password
+ * @param newCollege
+ * @param newEmail
+ * @param newPassword
+ * @returns
+ */
+
+export const validateUpdateAccount = (
+  email: string,
+  userData: any,
+  password: string,
+  newCollege?: string,
+  newEmail?: string,
+  newPassword?: string
+) => {
+  newCollege = newCollege || userData.college;
+  newEmail = newEmail || email;
+  newPassword = newPassword || password;
+
+  console.log({
+    college: newCollege,
+    email: newEmail,
+    newPassword: newPassword,
+    oldPassword: password,
+  });
+
+  return !newCollege || !newEmail || !newPassword || !password ? true : false;
+};
+
+function UserFeedback() {}
 
 export default UserFeedback;
