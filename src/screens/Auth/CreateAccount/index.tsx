@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { useState } from 'react';
+import * as React from 'react';
 import { Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, View, ScrollView, Platform } from 'react-native';
 import InputField from '../../../components/InputField';
 import { ButtonBlack, ButtonWhite } from '../../../components/Button';
@@ -14,17 +14,16 @@ import {
   validateEmail,
   validatePassword,
   isFilled,
-  validateCollege,
   validateConfirmPassword,
 } from '../../../firebase/Validation';
 import createAccount from '../../../firebase/Auth/createAccount';
 import styles from './styles';
 import { TextBold } from '../../../components/Text';
 
-export function CreateAccountStepOne({ navigation }) {
-  const [fullName, setFullName] = useState('');
-  const [college, setCollege] = useState('');
-  const [email, setEmail] = useState('');
+export function CreateAccountStepOne({ navigation }): JSX.Element {
+  const [fullName, setFullName] = React.useState('');
+  const [college, setCollege] = React.useState('');
+  const [email, setEmail] = React.useState('');
 
   let filledField = isFilled([fullName, college, email]);
 
@@ -51,7 +50,6 @@ export function CreateAccountStepOne({ navigation }) {
                   onChangeText={(college: string) => {
                     setCollege(college);
                   }}
-                  result={true ? validateCollege(college) === false : false}
                 />
                 <InputField
                   placeholder='Enter your email address'
@@ -84,13 +82,18 @@ export function CreateAccountStepOne({ navigation }) {
   );
 }
 
-export const CreateAccountStepTwo = ({ route, navigation }) => {
+export function CreateAccountStepTwo({ route, navigation }): JSX.Element {
   let userData = route.params.userData;
 
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [visiblePassword, setVisiblePassword] = React.useState(false);
+  const [visibleConfirmPassword, setVisibleConfirmPassword] = React.useState(false);
+
+  const [password, setPassword] = React.useState('');
+  const [confirmPassword, setConfirmPassword] = React.useState('');
 
   let filledField = isFilled([password, confirmPassword]);
+
+  console.log(visiblePassword);
 
   return (
     <>
@@ -105,7 +108,10 @@ export const CreateAccountStepTwo = ({ route, navigation }) => {
               >
                 <InputField
                   placeholder='Enter your password'
-                  secureTextEntry={true}
+                  icon={true}
+                  passwordVisibility={visiblePassword}
+                  onPress={() => setVisiblePassword((visiblePassword) => !visiblePassword)}
+                  secureTextEntry={visiblePassword}
                   onChangeText={(password: string) => {
                     setPassword(password);
                   }}
@@ -114,7 +120,12 @@ export const CreateAccountStepTwo = ({ route, navigation }) => {
 
                 <InputField
                   placeholder='Confirm password'
-                  secureTextEntry={true}
+                  icon={true}
+                  passwordVisibility={visibleConfirmPassword}
+                  onPress={() => {
+                    setVisibleConfirmPassword((visibleConfirmPassword) => !visibleConfirmPassword);
+                  }}
+                  secureTextEntry={visibleConfirmPassword}
                   onChangeText={(confirmPassword: string) => {
                     setConfirmPassword(confirmPassword);
                   }}
@@ -146,4 +157,4 @@ export const CreateAccountStepTwo = ({ route, navigation }) => {
       </View>
     </>
   );
-};
+}

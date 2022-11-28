@@ -28,6 +28,13 @@ const styles = StyleSheet.create({
     margin: 12 / 2,
   },
 
+  showPassword: {
+    flex: 1,
+    position: 'absolute',
+    left: 296,
+    top: 21,
+  },
+
   result: {
     width: 288,
     flex: 1,
