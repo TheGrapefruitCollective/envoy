@@ -5,14 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import {
-  Keyboard,
-  KeyboardAvoidingView,
-  ScrollView,
-  Platform,
-  TouchableWithoutFeedback,
-  View,
-} from 'react-native';
+import { Keyboard, KeyboardAvoidingView, ScrollView, Platform, TouchableWithoutFeedback, View } from 'react-native';
 import { useEffect, useState } from 'react';
 import { ProfileIcon } from '../../../components/ProfileIcon';
 import { ButtonBlack } from '../../../components/Button';
@@ -32,10 +25,8 @@ function Profile({ navigation }) {
     getLoggedInUserData(auth.currentUser.uid, getUserData);
   }, []);
 
-  let initial =
-    typeof userData.fullName !== 'undefined' ? userData.fullName[0] : '';
-  let emailVerified =
-    auth.currentUser.emailVerified === true ? '' : '(Not verified)';
+  let initial = typeof userData.fullName !== 'undefined' ? userData.fullName[0] : '';
+  let emailVerified = auth.currentUser.emailVerified === true ? '' : '(Not verified)';
 
   const [newCollege, setNewCollege] = useState('');
   const [newEmail, setNewEmail] = useState('');
@@ -43,24 +34,13 @@ function Profile({ navigation }) {
   const [password, setPassword] = useState('');
 
   let valid =
-    validateUpdateAccount(
-      auth.currentUser.email,
-      userData,
-      password,
-      newCollege,
-      newEmail,
-      newPassword
-    ) === true
+    validateUpdateAccount(auth.currentUser.email, userData, password, newCollege, newEmail, newPassword) === true
       ? true
       : false;
 
   return (
     <>
-      <KeyboardAvoidingView
-        enabled
-        behavior={Platform.OS === 'ios' ? 'padding' : null}
-        style={styles.container}
-      >
+      <KeyboardAvoidingView enabled behavior={Platform.OS === 'ios' ? 'padding' : null} style={styles.container}>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <>
             <View style={styles.inputFieldContainer}>
@@ -77,9 +57,7 @@ function Profile({ navigation }) {
                     <TextRegular
                       title={`${auth.currentUser.email} ${emailVerified}`}
                       onPress={() => {
-                        emailVerified === ''
-                          ? null
-                          : verifyAccount(auth.currentUser);
+                        emailVerified === '' ? null : verifyAccount(auth.currentUser);
                       }}
                     />
                   </View>
@@ -120,10 +98,7 @@ function Profile({ navigation }) {
             unclick={valid}
             disabled={valid}
           />
-          <ButtonBlack
-            title='Log out'
-            onPress={() => logOutAccount({ navigation })}
-          />
+          <ButtonBlack title='Log out' onPress={() => logOutAccount({ navigation })} />
         </View>
       </View>
     </>
