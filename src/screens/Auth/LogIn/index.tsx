@@ -18,6 +18,8 @@ function LogIn({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const [visiblePassword, setVisiblePassword] = useState(true);
+
   let validLogin = validateLogin(email, password);
   const [response, getResponse] = useState('');
 
@@ -40,7 +42,10 @@ function LogIn({ navigation }) {
 
                 <InputField
                   placeholder='Enter your password'
-                  secureTextEntry={true}
+                  icon={true}
+                  passwordVisibility={visiblePassword}
+                  secureTextEntry={visiblePassword}
+                  onPress={() => setVisiblePassword((visiblePassword) => !visiblePassword)}
                   onChangeText={(password: string) => setPassword(password)}
                   result={false}
                 />
