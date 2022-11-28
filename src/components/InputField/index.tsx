@@ -25,7 +25,8 @@ function InputField(props: TypeInputField) {
       {props.icon === true ? (
         <MaterialCommunityIcons
           style={styles.showPassword}
-          name={props.passwordVisibility === false ? 'eye-off' : 'eye'}
+          // If passwordVisibility is true, set name to 'eye'. Otherwise, set to 'eye-off'.
+          name={props.passwordVisibility === true ? 'eye' : 'eye-off'}
           color={Colours.black}
           size={16}
           onPress={props.onPress}
