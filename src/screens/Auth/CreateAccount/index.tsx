@@ -6,14 +6,7 @@
  */
 
 import { useState } from 'react';
-import {
-  Keyboard,
-  KeyboardAvoidingView,
-  TouchableWithoutFeedback,
-  View,
-  ScrollView,
-  Platform,
-} from 'react-native';
+import { Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, View, ScrollView, Platform } from 'react-native';
 import InputField from '../../../components/InputField';
 import { ButtonBlack, ButtonWhite } from '../../../components/Button';
 import {
@@ -37,11 +30,7 @@ export function CreateAccountStepOne({ navigation }) {
 
   return (
     <>
-      <KeyboardAvoidingView
-        enabled
-        behavior={Platform.OS === 'ios' ? 'padding' : null}
-        style={styles.container}
-      >
+      <KeyboardAvoidingView enabled behavior={Platform.OS === 'ios' ? 'padding' : null} style={styles.container}>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <>
             <View style={styles.inputFieldContainer}>
@@ -88,10 +77,7 @@ export function CreateAccountStepOne({ navigation }) {
               })
             }
           />
-          <ButtonWhite
-            title='Login account'
-            onPress={() => navigation.navigate('LogIn')}
-          />
+          <ButtonWhite title='Login account' onPress={() => navigation.navigate('LogIn')} />
         </View>
       </View>
     </>
@@ -108,11 +94,7 @@ export const CreateAccountStepTwo = ({ route, navigation }) => {
 
   return (
     <>
-      <KeyboardAvoidingView
-        enabled
-        behavior={Platform.OS === 'ios' ? 'padding' : null}
-        style={styles.container}
-      >
+      <KeyboardAvoidingView enabled behavior={Platform.OS === 'ios' ? 'padding' : null} style={styles.container}>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <>
             <View style={styles.inputFieldContainer}>
@@ -136,12 +118,7 @@ export const CreateAccountStepTwo = ({ route, navigation }) => {
                   onChangeText={(confirmPassword: string) => {
                     setConfirmPassword(confirmPassword);
                   }}
-                  result={
-                    true
-                      ? validateConfirmPassword(password, confirmPassword) ===
-                        false
-                      : false
-                  }
+                  result={true ? validateConfirmPassword(password, confirmPassword) === false : false}
                 />
 
                 <TextBold
@@ -164,10 +141,7 @@ export const CreateAccountStepTwo = ({ route, navigation }) => {
               createAccount(userData, { navigation });
             }}
           />
-          <ButtonWhite
-            title='Login account'
-            onPress={() => navigation.navigate('LogIn')}
-          />
+          <ButtonWhite title='Login account' onPress={() => navigation.navigate('LogIn')} />
         </View>
       </View>
     </>
