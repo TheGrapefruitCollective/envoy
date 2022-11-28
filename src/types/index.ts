@@ -23,10 +23,13 @@ export type TypeHeaderOptions = {
 };
 
 export type TypeInputField = {
+  icon?: boolean;
+  passwordVisibility?: boolean;
   placeholder: string;
-  result: boolean;
+  result?: boolean;
   secureTextEntry?: boolean;
   onChangeText: (params: any) => any;
+  onPress?: (params: any) => any;
 };
 
 export type TypeProfileIcon = {
