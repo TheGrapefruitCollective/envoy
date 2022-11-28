@@ -6,14 +6,7 @@
  */
 
 import { useState } from 'react';
-import {
-  Keyboard,
-  KeyboardAvoidingView,
-  TouchableWithoutFeedback,
-  View,
-  ScrollView,
-  Platform,
-} from 'react-native';
+import { Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, View, ScrollView, Platform } from 'react-native';
 import InputField from '../../../components/InputField';
 import { ButtonBlack, ButtonWhite } from '../../../components/Button';
 import { TextBold } from '../../../components/Text';
@@ -30,11 +23,7 @@ function LogIn({ navigation }) {
 
   return (
     <>
-      <KeyboardAvoidingView
-        enabled
-        behavior={Platform.OS === 'ios' ? 'padding' : null}
-        style={styles.container}
-      >
+      <KeyboardAvoidingView enabled behavior={Platform.OS === 'ios' ? 'padding' : null} style={styles.container}>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <>
             <View style={styles.inputFieldContainer}>
@@ -56,10 +45,7 @@ function LogIn({ navigation }) {
                   result={false}
                 />
 
-                <TextBold
-                  title='Forgot password?'
-                  onPress={() => navigation.navigate('ForgotPassword')}
-                />
+                <TextBold title='Forgot password?' onPress={() => navigation.navigate('ForgotPassword')} />
               </ScrollView>
             </View>
           </>
