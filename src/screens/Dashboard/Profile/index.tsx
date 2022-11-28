@@ -23,11 +23,7 @@ import getLoggedInUserData from '../../../firebase/Auth/getLoggedInUserData';
 import logOutAccount from '../../../firebase/Auth/logOutAccount';
 import verifyAccount from '../../../firebase/Auth/verifyAccount';
 import styles from './styles';
-import {
-  updateAccountCollege,
-  updateAccountEmail,
-  updateAccountPassword,
-} from '../../../firebase/Auth/updateAccount';
+import { validateUpdateAccount } from '../../../firebase/Validation';
 
 function Profile({ navigation }) {
   const [userData, getUserData] = useState<any>([]);
@@ -45,6 +41,18 @@ function Profile({ navigation }) {
   const [newEmail, setNewEmail] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [password, setPassword] = useState('');
+
+  let valid =
+    validateUpdateAccount(
+      auth.currentUser.email,
+      userData,
+      password,
+      newCollege,
+      newEmail,
+      newPassword
+    ) === true
+      ? true
+      : false;
 
   return (
     <>
@@ -108,29 +116,9 @@ function Profile({ navigation }) {
         <View style={styles.buttonContainer}>
           <ButtonBlack
             title='Update account'
-            onPress={() => {
-              console.log(
-                auth.currentUser.uid,
-                newCollege,
-                newEmail,
-                newPassword
-              );
-              updateAccountCollege(auth.currentUser.uid, newCollege);
-              updateAccountEmail(auth.currentUser, newEmail);
-              updateAccountPassword(auth.currentUser, newPassword);
-            }}
-            unclick={
-              (newCollege !== '' || newEmail !== '' || newPassword !== '') &&
-              password !== ''
-                ? false
-                : true
-            }
-            disabled={
-              (newCollege !== '' || newEmail !== '' || newPassword !== '') &&
-              password !== ''
-                ? false
-                : true
-            }
+            onPress={() => console.log('Clicked.')}
+            unclick={valid}
+            disabled={valid}
           />
           <ButtonBlack
             title='Log out'
